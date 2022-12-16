@@ -29,8 +29,36 @@
     <title>Road Club</title>
   </head>
   <body class="page">
-    <div class="page__content"></div>
+    <div class="page__content">
+      <header class="header">
+        <button
+          class="burger"
+          type="button"
+          aria-controls="nav"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Меню</span>
+        </button>
+
+        <nav>
+          <ul class="nav" id="nav" data-visible="false">
+            <li>
+              <a class="link-hover nav__link" href="#tracks"
+                >Покрытия и градиенты</a
+              >
+            </li>
+            <li>
+              <a class="link-hover nav__link" href="#bikes">Велосипеды</a>
+            </li>
+            <li>
+              <a class="link-hover nav__link" href="#trainings">Тренировки</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
     <script src="./scripts/theme.js"></script>
+    <script src="./scripts/burger.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

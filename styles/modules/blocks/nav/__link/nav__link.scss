@@ -1,0 +1,14 @@
+.nav__link {
+  text-decoration: none;
+  color: var(--color-content-primary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+}
+
+@media (max-width: 768px) {
+  .nav__link {
+    font-size: 18px;
+    line-height: 1;
+  }
+}

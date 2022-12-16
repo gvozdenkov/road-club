@@ -1,0 +1,27 @@
+:root {
+  --gutter-side: 120px;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --gutter-side: 80px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --gutter-side: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter-side: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --gutter-side: 18px;
+  }
+}

@@ -1,0 +1,27 @@
+.burger {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  right: var(--gutter-side);
+  top: 18px;
+  width: 22px;
+  aspect-ratio: 1;
+  border: 0;
+  padding: 0;
+
+  background-image: url(../../../../images/burger.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.burger[aria-expanded="true"] {
+  background-image: url(../../../../images/burger_close.svg);
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+}
