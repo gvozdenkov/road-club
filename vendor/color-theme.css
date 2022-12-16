@@ -1,0 +1,35 @@
+.theme-light {
+  --color-background-primary: #f4f4f4;
+  --color-background-secondary: #efefef;
+  --color-background-card: white;
+  --color-background-slider-button: #ebebeb;
+  --color-background-slider-button-hover: #ebebeb60;
+
+  --color-content-primary: #151515;
+  --color-content-secondary: #22222270;
+  --color-content-muted: #cfcfcf;
+
+  --color-accent-primary: #24b47e;
+  --color-button-hover: #319e75;
+
+  --color-link-hover: #15151575;
+  --color-link-active: #22222260;
+}
+
+.theme-dark {
+  --color-background-primary: #333333;
+  --color-background-secondary: #2f2f2f;
+  --color-background-card: white;
+  --color-background-slider-button: #434343;
+  --color-background-slider-button-hover: #43434360;
+
+  --color-content-primary: #ffffff;
+  --color-content-secondary: #e6e6e670;
+  --color-content-muted: #676767;
+
+  --color-accent-primary: #24b47e;
+  --color-button-hover: #319e75;
+
+  --color-link-hover: #ffffff65;
+  --color-link-active: #e5e5e550;
+}

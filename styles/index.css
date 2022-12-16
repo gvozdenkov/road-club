@@ -1,3 +1,15 @@
 @import "../vendor/normalize.css";
 @import "../vendor/fonts.css";
-@import "../vendor/variables.css";/*# sourceMappingURL=index.css.map */
+@import "../vendor/color-theme.css";
+.page {
+  font-family: "Inter", "Arial", sans-serif;
+  color: var(--color-content-primary);
+  background-color: var(--color-background-primary);
+}
+
+.page__content {
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--color-background-primary);
+}/*# sourceMappingURL=index.css.map */
