@@ -1,3 +1,5 @@
+@use "../../../abstracts/variables.scss" as *;
+
 .switch__slider {
   position: absolute;
   cursor: pointer;

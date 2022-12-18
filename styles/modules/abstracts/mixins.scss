@@ -1,3 +1,5 @@
+@use "./breakpoints" as *;
+
 @mixin reset-list {
   margin: 0;
   padding: 0;

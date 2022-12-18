@@ -1,32 +1,26 @@
-@import "../vendor/normalize.css";
-@import "../vendor/fonts.css";
-@import "./modules/mixins.scss";
-@import "./modules/variables.scss";
-@import "../vendor/color-theme.css";
+@use "./modules/blocks/page/page.scss";
+@use "./modules/blocks/page/__content/page__content.scss";
 
-@import "./modules/blocks/page/page.scss";
-@import "./modules/blocks/page/__content/page__content.scss";
+@use "./modules/blocks/sr-only/sr-only.scss";
 
-@import "./modules/blocks/sr-only/sr-only.scss";
+@use "./modules/blocks/link-hover/link-hover.scss";
 
-@import "./modules/blocks/link-hover/link-hover.scss";
+@use "./modules/blocks/header/header.scss";
 
-@import "./modules/blocks/header/header.scss";
+@use "./modules/blocks/burger/burger.scss";
+@use "./modules/blocks/burger/__bar/burger__bar.scss";
 
-@import "./modules/blocks/burger/burger.scss";
-@import "./modules/blocks/burger/__bar/burger__bar.scss";
+@use "./modules/blocks/menu/menu.scss";
+@use "./modules/blocks/menu/__color-theme/menu__color-theme.scss";
 
-@import "./modules/blocks/menu/menu.scss";
-@import "./modules/blocks/menu/__color-theme/menu__color-theme.scss";
+@use "./modules/blocks/nav/nav.scss";
+@use "./modules/blocks/nav/__link/nav__link.scss";
 
-@import "./modules/blocks/nav/nav.scss";
-@import "./modules/blocks/nav/__link/nav__link.scss";
+@use "./modules/blocks/color-theme/color-theme.scss";
+@use "./modules/blocks/color-theme/__icon/color-theme__icon.scss";
+@use "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_light.scss";
+@use "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_dark.scss";
 
-@import "./modules/blocks/color-theme/color-theme.scss";
-@import "./modules/blocks/color-theme/__icon/color-theme__icon.scss";
-@import "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_light.scss";
-@import "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_dark.scss";
-
-@import "./modules/blocks/switch/switch.scss";
-@import "./modules/blocks/switch/__input/switch__input.scss";
-@import "./modules/blocks/switch/__slider/switch__slider.scss";
+@use "./modules/blocks/switch/switch.scss";
+@use "./modules/blocks/switch/__input/switch__input.scss";
+@use "./modules/blocks/switch/__slider/switch__slider.scss";

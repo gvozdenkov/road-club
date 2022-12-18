@@ -1,3 +1,7 @@
+@use "../../abstracts/variables.scss" as *;
+@use "../../abstracts/mixins.scss" as *;
+@use "../../abstracts/breakpoints.scss" as *;
+
 .burger {
   display: none;
   position: absolute;

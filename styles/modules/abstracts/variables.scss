@@ -1,3 +1,5 @@
+@use "./mixins" as *;
+
 $font-family: "Inter", "Arial", sans-serif;
 
 $card-border-radius: 20px;
@@ -11,13 +13,6 @@ $card-box-shadow-hover: 0px 20px 140px rgba(0, 0, 0, 0.11);
 $switch-width: 44px;
 $switch-height: 24px;
 $switch-gap: 2px;
-
-$xxl: 1400px;
-$xl: 1200px;
-$lg: 992px;
-$md: 768px;
-$sm: 576px;
-$xs: 375px;
 
 :root {
   --gutter-side: 120px;
