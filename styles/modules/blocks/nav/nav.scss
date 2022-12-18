@@ -1,15 +1,13 @@
 .nav {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   gap: 34px;
+
+  @include reset-list;
 }
 
-@media (max-width: 768px) {
+@include width-md {
   .nav {
     flex-direction: column;
     justify-content: flex-start;

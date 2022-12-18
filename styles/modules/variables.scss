@@ -12,8 +12,33 @@ $switch-width: 44px;
 $switch-height: 24px;
 $switch-gap: 2px;
 
-$width-xxl: 1400px;
-$width-xl: 1200px;
-$width-lg: 992px;
-$width-md: 768px;
-$width-sm: 576px;
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 375px;
+
+:root {
+  --gutter-side: 120px;
+
+  @include width-xl {
+    --gutter-side: 80px;
+  }
+
+  @include width-lg {
+    --gutter-side: 60px;
+  }
+
+  @include width-md {
+    --gutter-side: 30px;
+  }
+
+  @include width-sm {
+    --gutter-side: 24px;
+  }
+
+  @include width-xs {
+    --gutter-side: 18px;
+  }
+}

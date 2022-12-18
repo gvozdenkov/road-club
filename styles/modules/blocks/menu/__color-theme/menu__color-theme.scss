@@ -1,10 +1,8 @@
 .menu__color-theme {
   margin-top: auto;
   display: none;
-}
 
-@media (max-width: 768px) {
-  .menu__color-theme {
+  @include width-md {
     display: flex;
   }
 }

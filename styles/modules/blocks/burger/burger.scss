@@ -14,14 +14,12 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+
+  @include width-md {
+    display: block;
+  }
 }
 
 .burger[aria-expanded="true"] {
   background-image: url(../../../../images/burger_close.svg);
-}
-
-@media (max-width: 768px) {
-  .burger {
-    display: block;
-  }
 }
