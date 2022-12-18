@@ -1,5 +1,5 @@
 const burgerBtn = document.querySelector(".burger");
-const navEl = document.querySelector(".nav");
+const navEl = document.querySelector(".menu");
 
 burgerBtn.addEventListener("click", () => {
   const visibility = navEl.getAttribute("data-visible");

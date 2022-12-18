@@ -7,24 +7,10 @@
   flex-flow: row nowrap;
   justify-content: flex-end;
   gap: 34px;
-
-  transform: translateX(0%);
-  transition: transform 0.6s cubic-bezier(0.51, 0.01, 0.27, 0.99);
-}
-
-.nav[data-visible="true"] {
-  transform: translateX(0%);
 }
 
 @media (max-width: 768px) {
   .nav {
-    transform: translateX(100%);
-    position: fixed;
-    inset: $menu-height 0 0 0;
-    z-index: 1000;
-    padding: 70px 55px;
-    background-color: var(--color-background-primary);
-
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;

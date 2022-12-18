@@ -3,4 +3,6 @@
   color: var(--color-content-primary);
   background-color: var(--color-background-primary);
   overflow-x: hidden;
+
+  transition: background 0.2s ease-in-out, color 0.4s ease-in-out;
 }

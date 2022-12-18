@@ -34,27 +34,37 @@
         <button
           class="burger"
           type="button"
-          aria-controls="nav"
+          aria-controls="menu"
           aria-expanded="false"
         >
           <span class="sr-only">Меню</span>
         </button>
 
-        <nav>
-          <ul class="nav" id="nav" data-visible="false">
-            <li>
-              <a class="link-hover nav__link" href="#tracks"
-                >Покрытия и градиенты</a
-              >
-            </li>
-            <li>
-              <a class="link-hover nav__link" href="#bikes">Велосипеды</a>
-            </li>
-            <li>
-              <a class="link-hover nav__link" href="#trainings">Тренировки</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="menu" id="menu" data-visible="false">
+          <nav>
+            <ul class="nav">
+              <li>
+                <a class="link-hover nav__link" href="#tracks"
+                  >Покрытия и градиенты</a
+                >
+              </li>
+              <li>
+                <a class="link-hover nav__link" href="#bikes">Велосипеды</a>
+              </li>
+              <li>
+                <a class="link-hover nav__link" href="#trainings">Тренировки</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="color-theme menu__color-theme">
+            <div class="color-theme__icon color-theme__icon_type_light"></div>
+            <label class="switch">
+              <input class="switch__input" type="checkbox" />
+              <span class="switch__slider"></span>
+            </label>
+            <div class="color-theme__icon color-theme__icon_type_dark"></div>
+          </div>
+        </div>
       </header>
     </div>
     <script src="./scripts/theme.js"></script>

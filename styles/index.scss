@@ -16,5 +16,17 @@
 @import "./modules/blocks/burger/burger.scss";
 @import "./modules/blocks/burger/__bar/burger__bar.scss";
 
+@import "./modules/blocks/menu/menu.scss";
+@import "./modules/blocks/menu/__color-theme/menu__color-theme.scss";
+
 @import "./modules/blocks/nav/nav.scss";
 @import "./modules/blocks/nav/__link/nav__link.scss";
+
+@import "./modules/blocks/color-theme/color-theme.scss";
+@import "./modules/blocks/color-theme/__icon/color-theme__icon.scss";
+@import "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_light.scss";
+@import "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_dark.scss";
+
+@import "./modules/blocks/switch/switch.scss";
+@import "./modules/blocks/switch/__input/switch__input.scss";
+@import "./modules/blocks/switch/__slider/switch__slider.scss";

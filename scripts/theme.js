@@ -1,18 +1,15 @@
-doc = document.documentElement;
+const body = document.body;
+themeSwitchBtn = document.querySelector(".switch");
 
-doc.className = "theme-light";
+const theme = localStorage.getItem("theme");
+theme ? body.classList.add(theme) : null;
 
-// function to set a given theme/color-scheme
-function setTheme(themeName) {
-  doc.className = themeName;
-}
-
-// function to toggle between light and dark theme
-function toggleTheme() {
-  doc.className === "theme-light"
-    ? (doc.className = "theme-dark")
-    : (doc.className = "theme-light");
-}
-
-// buttonSwitch = document.querySelector(".side-menu__dark-mode-btn");
-// buttonSwitch.addEventListener("change", toggleTheme);
+themeSwitchBtn.addEventListener("change", () => {
+  if (body.classList.contains("light")) {
+    body.classList.replace("light", "dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    body.classList.replace("dark", "light");
+    localStorage.setItem("theme", "light");
+  }
+});
