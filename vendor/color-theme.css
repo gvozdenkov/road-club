@@ -9,8 +9,6 @@
   --color-content-primary: #151515;
   --color-content-secondary: #22222270;
   --color-content-muted: #cfcfcf;
-  --color-content-muted-svg: invert(89%) sepia(1%) saturate(0%)
-    hue-rotate(154deg) brightness(94%) contrast(93%);
 
   --color-accent-primary: #24b47e;
   --color-button-hover: #319e75;
@@ -30,8 +28,6 @@
   --color-content-primary: #ffffff;
   --color-content-secondary: #e6e6e670;
   --color-content-muted: #676767;
-  --color-content-muted-svg: invert(35%) sepia(0%) saturate(1070%)
-    hue-rotate(260deg) brightness(116%) contrast(100%);
 
   --color-accent-primary: #24b47e;
   --color-button-hover: #319e75;
