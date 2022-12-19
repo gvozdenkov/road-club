@@ -5,6 +5,17 @@
 
 @use "./modules/blocks/link-hover/link-hover.scss";
 
+@use "./modules/blocks/section-title/section-title.scss";
+
+@use "./modules/blocks/plain-text/plain-text.scss";
+@use "./modules/blocks/plain-text/_muted/plain-text_muted.scss";
+
+@use "./modules/blocks/image/image.scss";
+
+@use "./modules/blocks/button/button.scss";
+
+@use "./modules/blocks/card/card.scss";
+
 @use "./modules/blocks/header/header.scss";
 
 @use "./modules/blocks/burger/burger.scss";
@@ -24,3 +35,5 @@
 @use "./modules/blocks/switch/switch.scss";
 @use "./modules/blocks/switch/__input/switch__input.scss";
 @use "./modules/blocks/switch/__slider/switch__slider.scss";
+
+@use "./modules/blocks/lead/lead.scss";

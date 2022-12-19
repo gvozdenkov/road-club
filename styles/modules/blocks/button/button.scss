@@ -1,0 +1,14 @@
+@use "../../abstracts/variables" as *;
+
+.button {
+  width: 100%;
+  height: $button-height;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+
+  background-color: var(--color-accent-primary);
+  color: var(--color-button-text);
+  border: 0;
+  border-radius: $button-border-radius;
+}

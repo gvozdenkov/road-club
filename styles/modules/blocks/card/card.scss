@@ -1,0 +1,11 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.card {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-background-card);
+  padding: 20px;
+  border-radius: $card-border-radius;
+  box-sizing: border-box;
+}
