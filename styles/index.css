@@ -448,7 +448,7 @@
   aspect-ratio: 340/260;
 }
 
-.testimony {
+.section-image-text {
   padding: 120px var(--gutter-side) 60px;
   box-sizing: border-box;
   position: relative;
@@ -457,39 +457,24 @@
   gap: 80px;
 }
 @media (max-width: 992px) {
-  .testimony {
+  .section-image-text {
     grid-template-columns: 1fr;
     gap: 60px;
   }
 }
 @media (max-width: 768px) {
-  .testimony {
+  .section-image-text {
     padding: 60px var(--gutter-side) 40px;
     gap: 40px;
   }
 }
 
-.testimony__figure {
-  margin: 0;
+.section-image-text__content {
   display: flex;
   flex-flow: column nowrap;
 }
 
-.testimony__quote {
-  margin: 0;
-}
-@media (max-width: 992px) {
-  .testimony__quote {
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .testimony__quote {
-    margin-bottom: 40px;
-  }
-}
-
-.testimony__quote-text {
+.section-image-text__title {
   font-size: 34px;
   font-weight: 600;
   line-height: 1.29;
@@ -497,14 +482,30 @@
   margin: 0;
 }
 @media (max-width: 576px) {
-  .testimony__quote-text {
+  .section-image-text__title {
     font-size: 23px;
     line-height: 1.26;
   }
 }
 
-.testimony__quote-desc {
+.section-image-text__desc {
   margin-top: auto;
+}
+
+.testimony__figure {
+  margin: 0;
+}
+
+.testimony__quote {
+  margin: 0;
+}
+
+.testimony__quote-text {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  margin: inherit;
 }
 
 .testimony__author {

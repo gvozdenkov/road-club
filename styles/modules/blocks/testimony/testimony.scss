@@ -2,58 +2,22 @@
 @use "../../abstracts/mixins" as *;
 
 .testimony {
-  padding: 120px var(--gutter-side) 60px;
-  box-sizing: border-box;
-  position: relative;
-
-  display: grid;
-  grid-template-columns: 650fr 470fr;
-  gap: 80px;
-
-  @include width-lg {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  @include width-md {
-    padding: 60px var(--gutter-side) 40px;
-    gap: 40px;
-  }
 }
 
 .testimony__figure {
   margin: 0;
-  display: flex;
-  flex-flow: column nowrap;
 }
 
 .testimony__quote {
   margin: 0;
-
-  @include width-lg {
-    margin-bottom: 20px;
-  }
-
-  @include width-md {
-    margin-bottom: 40px;
-  }
 }
 
 .testimony__quote-text {
-  font-size: 34px;
-  font-weight: 600;
-  line-height: 1.29;
-  letter-spacing: -0.5px;
-  margin: 0;
-
-  @include width-sm {
-    font-size: 23px;
-    line-height: 1.26;
-  }
-}
-
-.testimony__quote-desc {
-  margin-top: auto;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  margin: inherit;
 }
 
 .testimony__author {
