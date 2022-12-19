@@ -16,6 +16,8 @@
 
   --color-link-hover: #15151575;
   --color-link-active: #22222260;
+
+  --color-section-divider: #e3e3e3;
 }
 
 .dark {
@@ -36,4 +38,6 @@
 
   --color-link-hover: #ffffff65;
   --color-link-active: #e5e5e550;
+
+  --color-section-divider: #e3e3e3;
 }
