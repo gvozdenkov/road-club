@@ -511,7 +511,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 6px;
   color: var(--color-content-primary);
 }
 @media (max-width: 768px) {
