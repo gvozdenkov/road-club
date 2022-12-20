@@ -18,6 +18,8 @@
   --color-link-active: #22222260;
 
   --color-section-divider: #e3e3e3;
+
+  --color-form-input-border: #c7c7c750;
 }
 
 .dark {
@@ -40,4 +42,6 @@
   --color-link-active: #e5e5e550;
 
   --color-section-divider: #e3e3e3;
+
+  --color-form-input-border: #7d7d7d50;
 }

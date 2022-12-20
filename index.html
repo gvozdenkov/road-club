@@ -138,6 +138,49 @@
           </ul>
         </section>
       </main>
+
+      <footer class="footer">
+        <form
+          action="/"
+          class="form footer__form subscribe-form"
+          name="subscribe-form"
+        >
+          <h2 class="form__title footer__form-title">
+            Подпишитесь на рассылку —
+          </h2>
+          <label for="email" class="form__label sr-only"
+            >Введите электронную почту</label
+          >
+          <div class="form__input-wrap">
+            <input
+              class="form__input form__input-with-btn"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Ваш e-mail"
+              required
+            />
+            <button class="form__input-btn" type="submit">Ok</button>
+          </div>
+        </form>
+
+        <p class="footer__copyright">&copy; Road Club 2021</p>
+
+        <div class="color-theme footer__color-theme">
+          <div class="color-theme__icon color-theme__icon_type_light"></div>
+          <label class="switch">
+            <input class="switch__input" type="checkbox" />
+            <span class="switch__slider"></span>
+          </label>
+          <div class="color-theme__icon color-theme__icon_type_dark"></div>
+        </div>
+
+        <img
+          class="image logo footer__logo"
+          src="./images/bike-logo.svg"
+          alt="Логотип Road Club."
+        />
+      </footer>
     </div>
     <script src="./scripts/theme.js"></script>
     <script src="./scripts/burger.js"></script>

@@ -13,6 +13,8 @@
 
 @use "./modules/blocks/image/image.scss";
 
+@use "./modules/blocks/logo/logo.scss";
+
 @use "./modules/blocks/button/button.scss";
 
 @use "./modules/blocks/color-theme/color-theme.scss";
@@ -41,3 +43,7 @@
 
 @use "./modules/blocks/testimony/testimony.scss";
 @use "./modules/blocks/training/training.scss";
+
+@use "./modules/blocks/footer/footer.scss";
+
+@use "./modules/blocks/form/form.scss";
