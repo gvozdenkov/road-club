@@ -15,6 +15,11 @@
 
 @use "./modules/blocks/button/button.scss";
 
+@use "./modules/blocks/color-theme/color-theme.scss";
+@use "./modules/blocks/color-theme/__icon/color-theme__icon.scss";
+@use "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_light.scss";
+@use "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_dark.scss";
+
 @use "./modules/blocks/card/card.scss";
 
 @use "./modules/blocks/header/header.scss";
@@ -27,11 +32,6 @@
 
 @use "./modules/blocks/nav/nav.scss";
 @use "./modules/blocks/nav/__link/nav__link.scss";
-
-@use "./modules/blocks/color-theme/color-theme.scss";
-@use "./modules/blocks/color-theme/__icon/color-theme__icon.scss";
-@use "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_light.scss";
-@use "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_dark.scss";
 
 @use "./modules/blocks/switch/switch.scss";
 @use "./modules/blocks/switch/__input/switch__input.scss";
