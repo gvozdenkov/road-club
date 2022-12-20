@@ -1,3 +1,7 @@
+.link-hover {
+  transition: color 0.25s ease-out;
+}
+
 .link-hover:hover {
   color: var(--color-link-hover);
 }

@@ -1,0 +1,59 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.training {
+  padding: 150px var(--gutter-side) 120px;
+  box-sizing: border-box;
+  position: relative;
+
+  display: grid;
+  grid-template:
+    "title . image"
+    ". . image" 50px
+    "desc . image"
+    ". . image" auto
+    "links . image"
+    / 460fr 160fr 580fr;
+
+  @include width-lg {
+    padding: 40px var(--gutter-side) 30px;
+    grid-template:
+      "title"
+      "." 40px
+      "image"
+      "." 40px
+      "desc"
+      "." 40px
+      "links"
+      / 1fr;
+  }
+
+  @include width-sm {
+    padding: 80px var(--gutter-side) 60px;
+  }
+}
+
+.training__image {
+  grid-area: image;
+  height: 100%;
+}
+
+.training__title {
+  grid-area: title;
+  min-width: 0;
+  word-wrap: break-word;
+}
+
+.training__desc {
+  grid-area: desc;
+}
+
+.training__links {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: auto;
+  display: flex;
+  gap: 30px;
+  grid-area: links;
+}

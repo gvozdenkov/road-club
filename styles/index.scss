@@ -3,6 +3,7 @@
 
 @use "./modules/blocks/sr-only/sr-only.scss";
 
+@use "./modules/blocks/link/link.scss";
 @use "./modules/blocks/link-hover/link-hover.scss";
 
 @use "./modules/blocks/section-title/section-title.scss";
@@ -41,3 +42,4 @@
 @use "./modules/blocks/section-image-text/section-image-text.scss";
 
 @use "./modules/blocks/testimony/testimony.scss";
+@use "./modules/blocks/training/training.scss";
