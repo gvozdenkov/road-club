@@ -51,19 +51,31 @@
   overflow: hidden;
 }
 
-.link {
+.link-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.56;
-  margin: 0;
-  text-decoration: none;
   color: var(--color-content-primary);
 }
 @media (max-width: 768px) {
-  .link {
+  .link-list {
     font-size: 14px;
     line-height: 1.43;
   }
+}
+
+.link-list__item {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
 }
 
 .link-hover {
