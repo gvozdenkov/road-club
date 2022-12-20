@@ -471,33 +471,49 @@
   aspect-ratio: 340/260;
 }
 
-.section-image-text {
+.testimony {
   padding: 120px var(--gutter-side) 60px;
   box-sizing: border-box;
   position: relative;
   display: grid;
   grid-template-columns: 650fr 470fr;
+  grid-template-areas: "image desc";
   gap: 80px;
 }
 @media (max-width: 992px) {
-  .section-image-text {
+  .testimony {
+    padding: 60px var(--gutter-side) 30px;
     grid-template-columns: 1fr;
-    gap: 60px;
+    grid-template-areas: "image" "desc";
+    gap: 40px;
   }
 }
-@media (max-width: 768px) {
-  .section-image-text {
+@media (max-width: 576px) {
+  .testimony {
     padding: 60px var(--gutter-side) 40px;
     gap: 40px;
   }
 }
 
-.section-image-text__content {
-  display: flex;
-  flex-flow: column nowrap;
+.testimony__image {
+  grid-area: image;
 }
 
-.section-image-text__title {
+.testimony__figure {
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 50px;
+  grid-area: desc;
+}
+@media (max-width: 576px) {
+  .testimony__figure {
+    gap: 40px;
+  }
+}
+
+.testimony__quote {
+  margin: 0;
   font-size: 34px;
   font-weight: 600;
   line-height: 1.29;
@@ -505,22 +521,10 @@
   margin: 0;
 }
 @media (max-width: 576px) {
-  .section-image-text__title {
+  .testimony__quote {
     font-size: 23px;
     line-height: 1.26;
   }
-}
-
-.section-image-text__desc {
-  margin-top: auto;
-}
-
-.testimony__figure {
-  margin: 0;
-}
-
-.testimony__quote {
-  margin: 0;
 }
 
 .testimony__quote-text {
@@ -532,6 +536,10 @@
 }
 
 .testimony__author {
+  margin-top: auto;
+}
+
+.testimony__author-name {
   font-size: 20px;
   font-weight: 500;
   line-height: 1.6;
@@ -539,12 +547,12 @@
   color: var(--color-content-primary);
 }
 @media (max-width: 768px) {
-  .testimony__author {
+  .testimony__author-name {
     margin-bottom: 4px;
   }
 }
 @media (max-width: 576px) {
-  .testimony__author {
+  .testimony__author-name {
     font-size: 14px;
     line-height: 1.57;
   }
@@ -578,6 +586,7 @@
 .testimony__section-divider {
   position: absolute;
   top: 40px;
+}
 
 .training {
   padding: 150px var(--gutter-side) 120px;

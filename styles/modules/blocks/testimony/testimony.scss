@@ -2,14 +2,58 @@
 @use "../../abstracts/mixins" as *;
 
 .testimony {
+  padding: 120px var(--gutter-side) 60px;
+  box-sizing: border-box;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 650fr 470fr;
+  grid-template-areas: "image desc";
+  gap: 80px;
+
+  @include width-lg {
+    padding: 60px var(--gutter-side) 30px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "desc";
+    gap: 40px;
+  }
+
+  @include width-sm {
+    padding: 60px var(--gutter-side) 40px;
+    gap: 40px;
+  }
+}
+
+.testimony__image {
+  grid-area: image;
 }
 
 .testimony__figure {
   margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 50px;
+  grid-area: desc;
+
+  @include width-sm {
+    gap: 40px;
+  }
 }
 
 .testimony__quote {
   margin: 0;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.29;
+  letter-spacing: -0.5px;
+  margin: 0;
+
+  @include width-sm {
+    font-size: 23px;
+    line-height: 1.26;
+  }
 }
 
 .testimony__quote-text {
@@ -21,6 +65,10 @@
 }
 
 .testimony__author {
+  margin-top: auto;
+}
+
+.testimony__author-name {
   font-size: 20px;
   font-weight: 500;
   line-height: 1.6;
