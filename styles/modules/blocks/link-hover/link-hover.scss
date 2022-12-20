@@ -2,6 +2,8 @@
   transition: color 0.25s ease-out;
 }
 
-.link-hover:hover {
+.link-hover:hover,
+.link-hover:focus {
   color: var(--color-link-hover);
+  outline: none;
 }
