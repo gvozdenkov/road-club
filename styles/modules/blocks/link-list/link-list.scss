@@ -5,23 +5,4 @@
   @include reset-list;
   display: flex;
   gap: 30px;
-
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.56;
-  color: var(--color-content-primary);
-
-  @include width-md {
-    font-size: 14px;
-    line-height: 1.43;
-  }
-}
-
-.link-list__item {
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  margin: 0;
-  text-decoration: none;
-  color: inherit;
 }

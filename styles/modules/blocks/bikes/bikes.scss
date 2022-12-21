@@ -1,0 +1,79 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.bikes {
+  padding: 60px var(--gutter-side) 104px;
+  position: relative;
+
+  display: grid;
+  grid-template:
+    "title . links"
+    ". . ." 120px
+    "bikes bikes bikes"
+    /1fr 1fr 1fr;
+
+  @include width-md {
+    padding: 60px var(--gutter-side) 60px;
+    grid-template:
+      "title . links"
+      ". . ." 40px
+      "bikes bikes bikes"
+      /1fr 1fr 1fr;
+  }
+
+  @include width-sm {
+    padding: 80px var(--gutter-side) 40px;
+
+    grid-template:
+      "title"
+      "." 40px
+      "links"
+      "." 20px
+      "bikes"
+      "." 20px
+      "dots"
+      /1fr;
+  }
+}
+
+.bikes__section-divider {
+  position: absolute;
+  top: 40px;
+}
+
+.bikes__section-title {
+  grid-area: title;
+}
+
+.bikes__link-list {
+  gap: 40px;
+  grid-area: links;
+  place-self: end;
+
+  @include width-sm {
+    display: none;
+  }
+}
+
+.bikes__biges-grid {
+  grid-area: bikes;
+}
+
+.bikes__slider-dots {
+  grid-area: dots;
+  justify-self: center;
+  display: none;
+
+  @include width-sm {
+    display: flex;
+  }
+}
+
+.bikes__form {
+  grid-area: links;
+  display: none;
+
+  @include width-sm {
+    display: block;
+  }
+}

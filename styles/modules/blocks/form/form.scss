@@ -83,3 +83,57 @@
   color: var(--color-link-hover);
   outline: none;
 }
+
+.form__select-reset {
+  appearance: none;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+.form__custom-select {
+  border: 1px solid #e3e3e3;
+  border-radius: 2px;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.56;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.3s ease-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    rotate: -90deg;
+    width: 7px;
+    height: 15px;
+    background: url(../../../../images/slider-arrow.svg) center / contain
+      no-repeat;
+  }
+
+  &:focus-within {
+    border-color: var(--color-content-primary);
+  }
+
+  @include width-md {
+    font-size: 11px;
+    line-height: 1.27;
+  }
+}
+
+.form__custom-select_place_bikes {
+  max-width: 114px;
+}

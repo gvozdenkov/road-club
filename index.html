@@ -119,6 +119,83 @@
           </figure>
         </section>
 
+        <section class="bikes">
+          <div class="section-divider bikes__section-divider"></div>
+          <h2 class="section-title bikes__section-title">Велосипеды</h2>
+
+          <ul class="link-list bikes__link-list">
+            <li>
+              <button
+                class="section-link section-link_type_muted section-link_active"
+              >
+                Шоссе
+              </button>
+            </li>
+            <li>
+              <button class="section-link section-link_type_muted">
+                Грэвел
+              </button>
+            </li>
+            <li>
+              <button class="section-link section-link_type_muted">TT</button>
+            </li>
+          </ul>
+
+          <form action="/" class="form bikes__form" name="track-type-form">
+            <label class="sr-only" for="track-type">Выбор велосипеда:</label>
+            <div class="form__custom-select form__custom-select_place_bikes">
+              <select
+                class="form__select-reset"
+                id="track-type"
+                name="track-type"
+              >
+                <option value="highway">Шоссе</option>
+                <option value="gravel">Грэвел</option>
+                <option value="triathlon">TT</option>
+              </select>
+            </div>
+          </form>
+
+          <div class="bikes-grid bikes__biges-grid">
+            <article class="bike-card">
+              <div class="card bike-card__card">
+                <img
+                  class="image"
+                  src="./images/bike-type/highway/cannondale-systemsix-imod.jpg"
+                  alt="Cannondale Systemsix Himod."
+                />
+              </div>
+              <p class="card__title bike-card__title">Cervelo Caledonia-5</p>
+            </article>
+            <article class="bike-card">
+              <div class="card bike-card__card">
+                <img
+                  class="image"
+                  src="./images/bike-type/highway/cannondale-systemsix-imod.jpg"
+                  alt="Cannondale Systemsix Himod."
+                />
+              </div>
+              <p class="card__title bike-card__title">Cervelo Caledonia-5</p>
+            </article>
+            <article class="bike-card">
+              <div class="card bike-card__card">
+                <img
+                  class="image"
+                  src="./images/bike-type/highway/cannondale-systemsix-imod.jpg"
+                  alt="Cannondale Systemsix Himod."
+                />
+              </div>
+              <p class="card__title bike-card__title">Cervelo Caledonia-5</p>
+            </article>
+          </div>
+
+          <div class="slider-dots bikes__slider-dots">
+            <span class="slider-dots__dot slider-dots__dot_active"></span>
+            <span class="slider-dots__dot"></span>
+            <span class="slider-dots__dot"></span>
+          </div>
+        </section>
+
         <section class="training">
           <div class="section-divider testimony__section-divider"></div>
           <img

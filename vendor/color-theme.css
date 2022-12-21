@@ -17,6 +17,15 @@
   --color-link-hover: #15151575;
   --color-link-active: #22222260;
 
+  --color-landing-link: #151515;
+  --color-landing-link-hover: rgba(21, 21, 21, 0.75);
+  --color-landing-link-active: rgba(21, 21, 21, 0.75);
+  --color-landing-link-muted: rgba(34, 34, 34, 0.7);
+  --color-landing-link-muted-hover: rgba(34, 34, 34, 0.6);
+
+  --color-slider-dot: #cacaca;
+  --color-slider-dot-active: #151515;
+
   --color-section-divider: #e3e3e3;
 
   --color-form-input-border: #c7c7c750;
