@@ -48,12 +48,7 @@
   grid-area: desc;
 }
 
-.training__links {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 0;
+.training__link-list {
   margin-top: auto;
-  display: flex;
-  gap: 30px;
   grid-area: links;
 }

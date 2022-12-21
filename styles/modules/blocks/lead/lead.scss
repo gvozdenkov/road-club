@@ -128,6 +128,11 @@
 
   position: sticky;
   top: 200px;
+  cursor: initial;
+
+  &:hover {
+    box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+  }
 
   @include width-md {
     max-width: 300px;

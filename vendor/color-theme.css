@@ -7,7 +7,7 @@
   --color-background-theme-button: #fff;
 
   --color-content-primary: #151515;
-  --color-content-secondary: #22222270;
+  --color-content-secondary: rgba(34, 34, 34, 0.7);
   --color-content-muted: #cfcfcf;
 
   --color-accent-primary: #24b47e;
