@@ -1,0 +1,22 @@
+@use "../../../abstracts/mixins.scss" as *;
+
+.menu__link {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  color: var(--color-content-primary);
+  text-decoration: none;
+  transition: color 0.25s ease-out;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--color-link-hover);
+    outline: none;
+  }
+
+  @include width-md {
+    font-size: 18px;
+    line-height: 1;
+  }
+}

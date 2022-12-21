@@ -4,7 +4,6 @@
 @use "./modules/blocks/sr-only/sr-only.scss";
 
 @use "./modules/blocks/link-list/link-list.scss";
-@use "./modules/blocks/link-hover/link-hover.scss";
 
 @use "./modules/blocks/section-title/section-title.scss";
 
@@ -34,8 +33,8 @@
 @use "./modules/blocks/menu/menu.scss";
 @use "./modules/blocks/menu/__color-theme/menu__color-theme.scss";
 
-@use "./modules/blocks/nav/nav.scss";
-@use "./modules/blocks/nav/__link/nav__link.scss";
+@use "./modules/blocks/menu/__link-list/menu__link-list.scss";
+@use "./modules/blocks/menu/__link/menu__link.scss";
 
 @use "./modules/blocks/switch/switch.scss";
 @use "./modules/blocks/switch/__input/switch__input.scss";

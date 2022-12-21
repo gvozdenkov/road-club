@@ -59,26 +59,6 @@
   gap: 30px;
 }
 
-.link-list__button-link {
-  color: var(--color-content-secondary);
-}
-
-.link-hover {
-  transition: color 0.25s ease-out;
-  cursor: pointer;
-}
-
-.link-hover:hover,
-.link-hover:focus {
-  color: var(--color-link-hover);
-  outline: none;
-}
-
-.link-hover_place_bikes {
-  color: #222222;
-  opacity: 0.6;
-}
-
 .section-title {
   font-size: 55px;
   font-weight: 700;
@@ -145,22 +125,6 @@
   color: var(--color-button-text);
   border: 0;
   border-radius: 4px;
-}
-
-.button-link {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.button-link_active {
-  font-weight: 600;
-  color: var(--color-content-primary);
-  opacity: 0.75;
-}
-.button-link_active:hover {
-  color: var(--color-content-primary);
 }
 
 .color-theme {
@@ -361,33 +325,36 @@
   }
 }
 
-.nav {
+.menu__link-list {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   gap: 34px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 @media (max-width: 768px) {
-  .nav {
+  .menu__link-list {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 32px;
   }
 }
-.nav__link {
-  text-decoration: none;
-  color: var(--color-content-primary);
+.menu__link {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.29;
+  color: var(--color-content-primary);
+  text-decoration: none;
+  transition: color 0.25s ease-out;
+  cursor: pointer;
+}
+.menu__link:hover, .menu__link:focus {
+  color: var(--color-link-hover);
+  outline: none;
 }
 @media (max-width: 768px) {
-  .nav__link {
+  .menu__link {
     font-size: 18px;
     line-height: 1;
   }

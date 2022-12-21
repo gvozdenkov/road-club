@@ -14,7 +14,7 @@
   --color-button-hover: #319e75;
   --color-button-text: #fff;
 
-  --color-link-hover: #15151575;
+  --color-link-hover: rgba(21, 21, 21, 0.75);
   --color-link-active: #22222260;
 
   --color-landing-link: #151515;

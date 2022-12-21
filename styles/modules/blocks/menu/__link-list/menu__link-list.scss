@@ -1,16 +1,14 @@
-@use "../../abstracts/mixins.scss" as *;
+@use "../../../abstracts/mixins.scss" as *;
 
-.nav {
+.menu__link-list {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   gap: 34px;
-
-  @include reset-list;
 }
 
 @include width-md {
-  .nav {
+  .menu__link-list {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
