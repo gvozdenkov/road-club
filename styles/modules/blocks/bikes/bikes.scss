@@ -2,7 +2,7 @@
 @use "../../abstracts/mixins" as *;
 
 .bikes {
-  padding: 60px var(--gutter-side) 104px;
+  padding: 0 var(--gutter-side) 0;
   position: relative;
 
   display: grid;
@@ -13,7 +13,6 @@
     /1fr 1fr 1fr;
 
   @include width-md {
-    padding: 60px var(--gutter-side) 60px;
     grid-template:
       "title . links"
       ". . ." 40px
@@ -22,8 +21,7 @@
   }
 
   @include width-sm {
-    padding: 80px var(--gutter-side) 40px;
-
+    padding-top: 40px;
     grid-template:
       "title"
       "." 40px

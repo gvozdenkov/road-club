@@ -2,7 +2,7 @@
 @use "../../abstracts/mixins" as *;
 
 .tracks {
-  padding: 80px 0 40px var(--gutter-side);
+  padding: 0 0 0 var(--gutter-side);
   box-sizing: border-box;
   position: relative;
 
@@ -18,7 +18,7 @@
     /1fr;
 
   @include width-md {
-    padding: 60px var(--gutter-side) 30px;
+    padding: 0 var(--gutter-side) 0;
 
     grid-template:
       "title buttons"
@@ -30,7 +30,7 @@
   }
 
   @include width-sm {
-    padding: 80px var(--gutter-side) 40px;
+    padding-top: 40px;
   }
 }
 

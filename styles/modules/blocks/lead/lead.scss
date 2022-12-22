@@ -3,8 +3,7 @@
 
 .lead {
   width: 100%;
-  padding-top: 20px;
-  padding-left: var(--gutter-side);
+  padding: 20px 0 0 var(--gutter-side);
   box-sizing: border-box;
   position: relative;
 
@@ -25,7 +24,7 @@
   }
 
   @include width-md {
-    padding: 40px var(--gutter-side);
+    padding: 40px var(--gutter-side) 0;
     grid-template:
       "title"
       "." 40px

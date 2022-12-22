@@ -473,12 +473,25 @@
 
 .content {
   overflow-x: hidden;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr;
+  gap: 120px;
+}
+@media (max-width: 992px) {
+  .content {
+    gap: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .content {
+    gap: 80px;
+  }
 }
 
 .lead {
   width: 100%;
-  padding-top: 20px;
-  padding-left: var(--gutter-side);
+  padding: 20px 0 0 var(--gutter-side);
   box-sizing: border-box;
   position: relative;
   display: grid;
@@ -491,7 +504,7 @@
 }
 @media (max-width: 768px) {
   .lead {
-    padding: 40px var(--gutter-side);
+    padding: 40px var(--gutter-side) 0;
     grid-template: "title" "." 40px "image" minmax(348px, 450px) "." 40px "desc" "." 40px "button "/1fr;
   }
 }
@@ -607,7 +620,7 @@
 }
 
 .testimony {
-  padding: 120px var(--gutter-side) 60px;
+  padding: 0 var(--gutter-side) 0;
   box-sizing: border-box;
   position: relative;
   display: grid;
@@ -617,7 +630,6 @@
 }
 @media (max-width: 992px) {
   .testimony {
-    padding: 60px var(--gutter-side) 30px;
     grid-template-columns: 1fr;
     grid-template-areas: "image" "desc";
     gap: 40px;
@@ -625,8 +637,7 @@
 }
 @media (max-width: 576px) {
   .testimony {
-    padding: 60px var(--gutter-side) 40px;
-    gap: 40px;
+    padding-top: 20px;
   }
 }
 
@@ -704,40 +715,37 @@
   }
 }
 
-.section-divider {
-  border-bottom: 1px solid var(--color-section-divider);
-  height: 1px;
-  width: calc(100% - var(--gutter-side) * 2);
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
+  translate: -50% -50%;
+  width: calc(100% - var(--gutter-side) * 2);
+  height: 1px;
+  background-color: var(--color-section-divider);
+  opacity: 0;
 }
 @media (max-width: 576px) {
-  .section-divider {
-    display: block;
+  .section-divider::before {
+    opacity: 1;
   }
 }
 
-.testimony__section-divider {
-  position: absolute;
-  top: 40px;
-}
-
 .bikes {
-  padding: 60px var(--gutter-side) 104px;
+  padding: 0 var(--gutter-side) 0;
   position: relative;
   display: grid;
   grid-template: "title . links" ". . ." 120px "bikes bikes bikes"/1fr 1fr 1fr;
 }
 @media (max-width: 768px) {
   .bikes {
-    padding: 60px var(--gutter-side) 60px;
     grid-template: "title . links" ". . ." 40px "bikes bikes bikes"/1fr 1fr 1fr;
   }
 }
 @media (max-width: 576px) {
   .bikes {
-    padding: 80px var(--gutter-side) 40px;
+    padding-top: 40px;
     grid-template: "title" "." 40px "links" "." 20px "bikes" "." 20px "dots"/1fr;
   }
 }
@@ -840,7 +848,7 @@
 }
 
 .tracks {
-  padding: 80px 0 40px var(--gutter-side);
+  padding: 0 0 0 var(--gutter-side);
   box-sizing: border-box;
   position: relative;
   display: grid;
@@ -848,13 +856,13 @@
 }
 @media (max-width: 768px) {
   .tracks {
-    padding: 60px var(--gutter-side) 30px;
+    padding: 0 var(--gutter-side) 0;
     grid-template: "title buttons" ". ." 40px "grid grid" ". ." 40px "text text"/1fr 1fr;
   }
 }
 @media (max-width: 576px) {
   .tracks {
-    padding: 80px var(--gutter-side) 40px;
+    padding-top: 40px;
   }
 }
 
@@ -942,7 +950,7 @@
 }
 
 .training {
-  padding: 150px var(--gutter-side) 120px;
+  padding: 0 var(--gutter-side) var(--gutter-side);
   box-sizing: border-box;
   position: relative;
   display: grid;
@@ -950,13 +958,14 @@
 }
 @media (max-width: 992px) {
   .training {
-    padding: 40px var(--gutter-side) 30px;
+    padding-bottom: 80px;
     grid-template: "title" "." 40px "image" "." 40px "desc" "." 40px "links"/1fr;
   }
 }
 @media (max-width: 576px) {
   .training {
-    padding: 80px var(--gutter-side) 60px;
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
 }
 
