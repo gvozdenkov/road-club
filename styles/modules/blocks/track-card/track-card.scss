@@ -19,8 +19,14 @@
   position: absolute;
   left: 0;
   bottom: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 
   @include width-xs {
     width: 70px;
   }
+}
+
+.track-card__label_visible {
+  opacity: 1;
 }

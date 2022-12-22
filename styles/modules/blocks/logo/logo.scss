@@ -1,4 +1,9 @@
 .logo {
   aspect-ratio: 1;
   object-fit: contain;
+  background-color: var(--color-content-primary);
+
+  mask-image: url(../../../../images/bike-logo.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
