@@ -1,0 +1,50 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.slider-button {
+  width: 50px;
+  aspect-ratio: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 500px;
+  position: relative;
+  background-color: var(--color-background-slider-button);
+  transition: 0.25s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-background-slider-button-hover);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 12px;
+    aspect-ratio: 12 / 16;
+    background-color: var(--color-content-primary);
+    transition: 0.25s ease-out;
+
+    mask-image: url(../../../../images/slider-arrow.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    @include width-xs {
+      width: 8px;
+    }
+  }
+
+  &:hover::after {
+    opacity: 0.75;
+  }
+
+  @include width-xs {
+    width: 24px;
+  }
+}
+
+.slider-button_type_next {
+  rotate: 180deg;
+}

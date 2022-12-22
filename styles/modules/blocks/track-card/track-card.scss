@@ -1,0 +1,26 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.track-card {
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.track-card__image {
+  height: 100%;
+  width: initial;
+
+  @include width-md {
+    width: 100%;
+  }
+}
+
+.track-card__label {
+  position: absolute;
+  left: 0;
+  bottom: 16px;
+
+  @include width-xs {
+    width: 70px;
+  }
+}

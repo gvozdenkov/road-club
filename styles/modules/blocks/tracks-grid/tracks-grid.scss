@@ -1,0 +1,23 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.tracks-grid {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 40px;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+
+  @include width-md {
+    overflow-x: scroll;
+    grid-template-columns: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tracks-grid__track-card {
+  aspect-ratio: 650 / 400;
+}

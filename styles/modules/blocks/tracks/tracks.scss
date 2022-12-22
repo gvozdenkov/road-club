@@ -1,0 +1,68 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.tracks {
+  padding: 80px 0 40px var(--gutter-side);
+  box-sizing: border-box;
+  position: relative;
+
+  display: grid;
+  grid-template:
+    "title"
+    "." 50px
+    "text"
+    "." 80px
+    "grid"
+    "." 50px
+    "buttons"
+    /1fr;
+
+  @include width-md {
+    padding: 60px var(--gutter-side) 30px;
+
+    grid-template:
+      "title buttons"
+      ". ." 40px
+      "grid grid"
+      ". ." 40px
+      "text text"
+      /1fr 1fr;
+  }
+
+  @include width-sm {
+    padding: 80px var(--gutter-side) 40px;
+  }
+}
+
+.tracks__section-divider {
+  position: absolute;
+  top: 40px;
+}
+
+.section-title {
+  max-width: 460px;
+  grid-area: title;
+  align-self: center;
+}
+
+.tracks__plain-text {
+  max-width: 460px;
+  grid-area: text;
+
+  @include width-md {
+    max-width: 100%;
+  }
+}
+
+.tracks__tracks-grid {
+  grid-area: grid;
+}
+
+.tracks__slider-buttons {
+  gap: 20px;
+  grid-area: buttons;
+
+  @include width-md {
+    justify-self: end;
+  }
+}

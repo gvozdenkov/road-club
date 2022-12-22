@@ -40,6 +40,7 @@
 @use "./modules/blocks/switch/__input/switch__input.scss";
 @use "./modules/blocks/switch/__slider/switch__slider.scss";
 
+@use "./modules/blocks/slider-button/slider-button.scss";
 @use "./modules/blocks/slider-dots/slider-dots.scss";
 
 @use "./modules/blocks/content/content.scss";
@@ -51,6 +52,10 @@
 @use "./modules/blocks/bikes/bikes.scss";
 @use "./modules/blocks/bikes-grid/bikes-grid.scss";
 @use "./modules/blocks/bike-card/bike-card.scss";
+
+@use "./modules/blocks/tracks/tracks.scss";
+@use "./modules/blocks/tracks-grid/tracks-grid.scss";
+@use "./modules/blocks/track-card/track-card.scss";
 
 @use "./modules/blocks/training/training.scss";
 
