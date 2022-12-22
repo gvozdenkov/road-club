@@ -1,15 +1,19 @@
-const body = document.body;
-themeSwitchBtn = document.querySelector(".switch");
+const page = document.querySelector(".page");
+themeSwitchBtns = document.querySelectorAll(".switch");
 
 const theme = localStorage.getItem("theme");
-theme ? body.classList.add(theme) : null;
+theme ? page.classList.add(theme) : null;
 
-themeSwitchBtn.addEventListener("change", () => {
-  if (body.classList.contains("light")) {
-    body.classList.replace("light", "dark");
+const switchTheme = () => {
+  if (page.classList.contains("light")) {
+    page.classList.replace("light", "dark");
     localStorage.setItem("theme", "dark");
   } else {
-    body.classList.replace("dark", "light");
+    page.classList.replace("dark", "light");
     localStorage.setItem("theme", "light");
   }
+};
+
+themeSwitchBtns.forEach((button) => {
+  button.addEventListener("change", switchTheme);
 });

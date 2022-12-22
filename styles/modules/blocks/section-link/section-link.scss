@@ -14,7 +14,7 @@
   margin: 0;
   color: var(--color-landing-link);
   cursor: pointer;
-  transition: color 0.25s ease-out;
+  transition: $switch-theme-trans;
 
   &:hover,
   &:focus {
@@ -37,7 +37,7 @@
     color: var(--color-landing-link-muted-hover);
   }
 
-  transition: color 0.25s ease-out;
+  transition: $switch-theme-trans;
 }
 
 .section-link_type_bold {

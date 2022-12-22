@@ -20,6 +20,8 @@
       "copy logo"
       / 1fr 1fr;
   }
+
+  transition: $switch-theme-trans;
 }
 
 .footer__form {
@@ -43,6 +45,7 @@
   color: var(--color-content-muted);
   grid-area: copy;
   align-self: end;
+  transition: $switch-theme-trans;
 
   @include width-md {
     align-self: center;

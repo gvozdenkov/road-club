@@ -29,6 +29,7 @@
   --color-section-divider: #e3e3e3;
 
   --color-form-input-border: #c7c7c750;
+  --color-form-custom-select: #e3e3e3;
 }
 
 .dark {
@@ -53,4 +54,5 @@
   --color-section-divider: #e3e3e3;
 
   --color-form-input-border: #7d7d7d50;
+  --color-form-custom-select: rgba(125, 125, 125, 0.5);
 }

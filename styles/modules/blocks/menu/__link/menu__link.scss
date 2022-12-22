@@ -1,3 +1,4 @@
+@use "../../../abstracts/variables.scss" as *;
 @use "../../../abstracts/mixins.scss" as *;
 
 .menu__link {
@@ -6,7 +7,7 @@
   line-height: 1.29;
   color: var(--color-content-primary);
   text-decoration: none;
-  transition: color 0.25s ease-out;
+  transition: $switch-theme-trans;
   cursor: pointer;
 
   &:hover,

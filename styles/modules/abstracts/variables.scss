@@ -16,6 +16,9 @@ $switch-width: 44px;
 $switch-height: 24px;
 $switch-gap: 2px;
 
+$switch-theme-trans: background-color 0.5s ease-in-out, color 0.3s ease-in-out,
+  border-color 0.3s ease-in-out;
+
 :root {
   --gutter-side: 120px;
 

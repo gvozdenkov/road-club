@@ -9,7 +9,7 @@
   border-radius: 500px;
   position: relative;
   background-color: var(--color-background-slider-button);
-  transition: 0.25s ease-out;
+  transition: $switch-theme-trans;
   cursor: pointer;
 
   &:hover {
@@ -25,7 +25,7 @@
     width: 12px;
     aspect-ratio: 12 / 16;
     background-color: var(--color-content-primary);
-    transition: 0.25s ease-out;
+    transition: $switch-theme-trans;
 
     mask-image: url(../../../../images/slider-arrow.svg);
     mask-repeat: no-repeat;

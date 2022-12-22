@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   z-index: 9999;
-  background-color: var(--color-background-primary);
+  background-color: inherit;
   padding: 28px var(--gutter-side);
   height: $menu-height;
   box-sizing: border-box;

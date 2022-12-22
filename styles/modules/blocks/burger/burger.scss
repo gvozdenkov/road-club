@@ -12,12 +12,12 @@
   aspect-ratio: 1;
   border: 0;
   padding: 0;
-
-  background-image: url(../../../../images/burger.svg);
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
   cursor: pointer;
+
+  background-color: var(--color-content-primary);
+  mask-image: url(../../../../images/burger.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
 
   @include width-md {
     display: block;
@@ -25,5 +25,5 @@
 }
 
 .burger[aria-expanded="true"] {
-  background-image: url(../../../../images/burger_close.svg);
+  mask-image: url(../../../../images/burger_close.svg);
 }
