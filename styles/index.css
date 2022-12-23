@@ -1,3 +1,7 @@
+.html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --gutter-side: 120px;
 }
