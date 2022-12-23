@@ -10,6 +10,10 @@
   box-sizing: border-box;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
   box-shadow: $card-box-shadow;
   transition: box-shadow 0.15s ease-out;
 

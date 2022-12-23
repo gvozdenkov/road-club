@@ -77,6 +77,15 @@
   justify-self: start;
   position: relative;
 
+  min-width: 0;
+  word-wrap: break-word;
+  word-break: break-all;
+  max-width: 300px;
+
+  @include width-lg {
+    max-width: 200px;
+  }
+
   @include width-md {
     display: none;
   }
@@ -147,5 +156,5 @@
 }
 
 .lead__card-image {
-  aspect-ratio: 340 / 260;
+  object-fit: contain;
 }
