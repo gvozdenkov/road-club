@@ -21,6 +21,7 @@ $switch-theme-trans: background-color 0.5s ease-in-out, color 0.3s ease-in-out,
 
 :root {
   --gutter-side: 120px;
+  --slider-gap: 40px;
 
   @include width-xl {
     --gutter-side: 80px;
@@ -32,6 +33,7 @@ $switch-theme-trans: background-color 0.5s ease-in-out, color 0.3s ease-in-out,
 
   @include width-md {
     --gutter-side: 30px;
+    --slider-gap: 30px;
   }
 
   @include width-sm {

@@ -126,51 +126,13 @@
           </p>
 
           <div class="tracks-grid tracks__tracks-grid">
-            <article class="track-card tracks-grid__track-card">
-              <img
-                class="image track-card__image"
-                src="./images/track-type/highway.jpg"
-                alt=""
-              />
-              <img
-                class="track-card__label track-card__label_visible"
-                src="./images/track-type/label/label-highway.svg"
-                alt=""
-              />
-            </article>
-            <article class="track-card tracks-grid__track-card">
-              <img
-                class="image track-card__image"
-                src="./images/track-type/gravel.jpg"
-                alt=""
-                aria-hidden="true"
-              />
-              <img
-                class="track-card__label"
-                src="./images/track-type/label/label-gravel.svg"
-                alt=""
-                aria-hidden="true"
-              />
-            </article>
-            <article class="track-card tracks-grid__track-card">
-              <img
-                class="image track-card__image"
-                src="./images/track-type/triathlon.jpg"
-                alt=""
-              />
-              <img
-                class="track-card__label"
-                src="./images/track-type/label/label-triathlon.svg"
-                alt=""
-                aria-hidden="true"
-              />
-            </article>
+            <!-- render Track cards here -->
           </div>
 
           <ul class="link-list tracks__slider-buttons">
             <li>
               <button
-                class="slider-button"
+                class="slider-button slider-button_type_prev"
                 type="button"
                 aria-label="Предыдущий слайд"
               ></button>
@@ -189,31 +151,8 @@
           <div class="section-divider bikes__section-divider"></div>
           <h2 class="section-title bikes__section-title">Велосипеды</h2>
 
-          <ul class="link-list bikes__link-list">
-            <li>
-              <button
-                class="section-link section-link_type_muted track-type-btn section-link_active"
-                value="highway"
-              >
-                Шоссе
-              </button>
-            </li>
-            <li>
-              <button
-                class="section-link section-link_type_muted track-type-btn"
-                value="gravel"
-              >
-                Грэвел
-              </button>
-            </li>
-            <li>
-              <button
-                class="section-link section-link_type_muted track-type-btn"
-                value="triathlon"
-              >
-                TT
-              </button>
-            </li>
+          <ul class="link-list bikes__link-list track-type-buttons">
+            <!-- Track type buttons here -->
           </ul>
 
           <form action="/" class="form bikes__form" name="track-type-form">
@@ -328,6 +267,34 @@
         </div>
         <p class="card__title bike-card__title">Cervelo Caledonia-5</p>
       </article>
+    </template>
+
+    <!-- Track card Template -->
+    <template id="track-card-template">
+      <article class="track-card tracks-grid__track-card" data-track="highway">
+        <img
+          class="image track-card__image"
+          src="./images/track-type/highway.jpg"
+          alt=""
+        />
+        <img
+          class="track-card__label track-card__label_visible"
+          src="./images/track-type/highway-label.svg"
+          alt=""
+        />
+      </article>
+    </template>
+
+    <!-- Bike type button Template -->
+    <template id="bike-type-button-template">
+      <li class="track-button">
+        <button
+          class="section-link section-link_type_muted track-type-btn"
+          value="highway"
+        >
+          Шоссе
+        </button>
+      </li>
     </template>
 
     <script src="./scripts/theme.js"></script>

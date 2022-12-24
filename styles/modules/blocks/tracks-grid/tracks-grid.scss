@@ -4,11 +4,15 @@
 .tracks-grid {
   display: grid;
   grid-auto-flow: column;
-  gap: 40px;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
+  grid-template-columns: repeat(2, minmax(650px, 50%));
+  align-items: stretch;
+  gap: var(--slider-gap);
+  position: relative;
+
+  // transition: left 0.6s ease;
 
   @include width-md {
+    scroll-snap-type: x mandatory;
     overflow-x: scroll;
     grid-template-columns: 100%;
   }
@@ -20,4 +24,5 @@
 
 .tracks-grid__track-card {
   aspect-ratio: 650 / 400;
+  max-width: 650px;
 }

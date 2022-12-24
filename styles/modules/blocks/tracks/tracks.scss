@@ -2,9 +2,11 @@
 @use "../../abstracts/mixins" as *;
 
 .tracks {
-  padding: 0 0 0 var(--gutter-side);
   box-sizing: border-box;
   position: relative;
+  overflow-x: hidden;
+  max-width: calc(100% - var(--gutter-side));
+  margin-left: auto;
 
   display: grid;
   grid-template:
@@ -18,6 +20,7 @@
     /1fr;
 
   @include width-md {
+    max-width: 100%;
     padding: 0 var(--gutter-side) 0;
 
     grid-template:
@@ -56,6 +59,7 @@
 
 .tracks__tracks-grid {
   grid-area: grid;
+  left: 0;
 }
 
 .tracks__slider-buttons {

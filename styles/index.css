@@ -4,6 +4,7 @@
 
 :root {
   --gutter-side: 120px;
+  --slider-gap: 40px;
 }
 @media (max-width: 1200px) {
   :root {
@@ -18,6 +19,7 @@
 @media (max-width: 768px) {
   :root {
     --gutter-side: 30px;
+    --slider-gap: 30px;
   }
 }
 @media (max-width: 576px) {
@@ -856,14 +858,17 @@
 }
 
 .tracks {
-  padding: 0 0 0 var(--gutter-side);
   box-sizing: border-box;
   position: relative;
+  overflow-x: hidden;
+  max-width: calc(100% - var(--gutter-side));
+  margin-left: auto;
   display: grid;
   grid-template: "title" "." 50px "text" "." 80px "grid" "." 50px "buttons"/1fr;
 }
 @media (max-width: 768px) {
   .tracks {
+    max-width: 100%;
     padding: 0 var(--gutter-side) 0;
     grid-template: "title buttons" ". ." 40px "grid grid" ". ." 40px "text text"/1fr 1fr;
   }
@@ -897,6 +902,7 @@
 
 .tracks__tracks-grid {
   grid-area: grid;
+  left: 0;
 }
 
 .tracks__slider-buttons {
@@ -912,13 +918,15 @@
 .tracks-grid {
   display: grid;
   grid-auto-flow: column;
-  gap: 40px;
-  overflow-x: hidden;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  grid-template-columns: repeat(2, minmax(650px, 50%));
+  align-items: stretch;
+  gap: var(--slider-gap);
+  position: relative;
 }
 @media (max-width: 768px) {
   .tracks-grid {
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
     overflow-x: scroll;
     grid-template-columns: 100%;
   }
@@ -929,6 +937,7 @@
 
 .tracks-grid__track-card {
   aspect-ratio: 650/400;
+  max-width: 650px;
 }
 
 .track-card {
@@ -938,7 +947,6 @@
 
 .track-card__image {
   height: 100%;
-  width: initial;
 }
 @media (max-width: 768px) {
   .track-card__image {
