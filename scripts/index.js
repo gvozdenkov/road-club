@@ -86,9 +86,9 @@ const setTrackInfo = (track) => {
 function unsetCurrentActiveButton() {
   const trackTypeButtons = document.querySelectorAll(".track-type-btn");
   trackTypeButtons.forEach((trackButton) => {
-    trackButton.classList.contains("section-link_active")
-      ? trackButton.classList.remove("section-link_active")
-      : null;
+    if (trackButton.classList.contains("section-link_active")) {
+      trackButton.classList.remove("section-link_active");
+    }
   });
 }
 
@@ -97,9 +97,9 @@ function setActiveTrackButton() {
   const trackTypeButtons = document.querySelectorAll(".track-type-btn");
 
   trackTypeButtons.forEach((trackButton) => {
-    trackButton.value === getTrackType()
-      ? trackButton.classList.add("section-link_active")
-      : null;
+    if (trackButton.value === getTrackType()) {
+      trackButton.classList.add("section-link_active");
+    }
   });
 }
 
@@ -150,14 +150,13 @@ const getSliderCurrentPos = () => {
   return parseInt(localStorage.getItem("slider-pos"));
 };
 
-const initSliderCurrentPos = () => {
+function initSliderCurrentPos() {
   const sliderPos = getSliderCurrentPos();
-  !sliderPos ? setSliderCurrentPos(0 - getSlideWidth()) : null;
-};
+  !sliderPos ? setSliderCurrentPos(-getSlideWidth()) : null;
+}
 
 const scrollSlider = (positionOfScroll) => {
   tracksGrid.style.setProperty("left", `${positionOfScroll}px`);
-  // tracksGrid.style.left = `${positionOfScroll}px`;
 };
 
 const generateTrackCardElement = (data) => {
@@ -195,12 +194,14 @@ const handleScrollRight = () => {
   let newPos = getSliderCurrentPos();
   const prevSliderIndex = getSliderIndex();
 
+  // if last slide -> change pos to first slide
   newPos - getSlideWidth() === -(tracks.length + 1) * getSlideWidth()
     ? (newPos = -getSlideWidth())
     : (newPos = getSliderCurrentPos() - getSlideWidth());
 
   setSliderCurrentPos(newPos);
 
+  // calc index of current slide. Chenge to 0 if last slide
   let sliderIndex =
     prevSliderIndex + 1 >= tracks.length ? 0 : prevSliderIndex + 1;
   setSliderIndex(sliderIndex);
@@ -216,6 +217,7 @@ const handleScrollLeft = () => {
   let newPos = getSliderCurrentPos();
   const prevSliderIndex = getSliderIndex();
 
+  // if 1st slide -> change pos to last slide
   newPos + getSlideWidth() === 0
     ? (newPos = -tracks.length * getSlideWidth())
     : (newPos = getSliderCurrentPos() + getSlideWidth());
@@ -242,7 +244,8 @@ const setPageContent = () => {
 
   setTrackInfo(selectedTrack);
 
-  scrollSlider(getSliderCurrentPos());
+  const currSliderPos = -(getSliderIndex() + 1) * getSlideWidth();
+  scrollSlider(currSliderPos);
 
   clearBikesCards();
   renderBikesCards(bikes);
@@ -271,6 +274,14 @@ sliderRightButton.addEventListener("click", handleScrollRight);
 trackTypeButtons.forEach((trackButton) => {
   trackButton.addEventListener("click", handleClickTrackTypeButton);
 });
+
+const handleWindowResize = () => {
+  clearTimeout(timeout);
+  timeout = setTimeout(setPageContent, 250);
+};
+
+let timeout = false;
+window.addEventListener("resize", handleWindowResize);
 
 const trackTypes = [];
 tracks.forEach((track) => trackTypes.push(track.type));
