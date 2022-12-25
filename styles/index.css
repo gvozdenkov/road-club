@@ -1118,11 +1118,13 @@
   color: inherit;
   padding: 11px 22px 11px 20px;
   box-sizing: border-box;
-  border: 1px solid var(--color-form-input-border);
+  border: 1px solid;
+  border-color: var(--color-form-input-border);
   border-radius: 4px;
   font-size: 13px;
   font-weight: 500;
   line-height: 2.15;
+  transition: border-color 0.2s ease-out;
 }
 
 .form__input::-moz-placeholder {
@@ -1142,22 +1144,39 @@
   transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-.form__input:focus,
 .form__input:hover {
   outline: none;
 }
 
-.form__input:focus::-moz-placeholder, .form__input:hover::-moz-placeholder {
+.form__input:focus,
+.form__input:active {
+  outline: none;
+  border-color: var(--color-form-input-border-focus);
+}
+
+.form__input:hover::-moz-placeholder {
   color: var(--color-content-primary);
 }
 
-.form__input:focus:-ms-input-placeholder, .form__input:hover:-ms-input-placeholder {
+.form__input:hover:-ms-input-placeholder {
   color: var(--color-content-primary);
+}
+
+.form__input:hover::placeholder {
+  color: var(--color-content-primary);
+}
+
+.form__input:focus::-moz-placeholder, .form__input:active::-moz-placeholder {
+  color: transparent;
+}
+
+.form__input:focus:-ms-input-placeholder, .form__input:active:-ms-input-placeholder {
+  color: transparent;
 }
 
 .form__input:focus::placeholder,
-.form__input:hover::placeholder {
-  color: var(--color-content-primary);
+.form__input:active::placeholder {
+  color: transparent;
 }
 
 .form__input-with-btn {
@@ -1178,9 +1197,16 @@
   transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-.form__input-btn:focus {
-  color: var(--color-link-hover);
-  outline: none;
+.subscribe-form__submit {
+  opacity: 0;
+}
+
+.subscribe-form__submit:focus {
+  opacity: 1;
+}
+
+.form__input-with-btn:focus + .subscribe-form__submit {
+  opacity: 1;
 }
 
 .form__select-reset {
