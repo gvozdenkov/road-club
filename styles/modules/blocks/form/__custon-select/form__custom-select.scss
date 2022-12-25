@@ -20,10 +20,11 @@
     bottom: 0;
     margin: auto;
     rotate: -90deg;
-    width: 7px;
-    height: 15px;
+    width: 5px;
+    height: 10px;
     background-color: var(--color-content-primary);
     mask-image: url(../../../../images/slider-arrow.svg);
+    mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
   }

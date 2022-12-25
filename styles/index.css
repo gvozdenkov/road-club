@@ -204,7 +204,7 @@
   outline: 0;
   color: var(--color-landing-link-hover);
 }
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .section-link {
     font-size: 14px;
     font-weight: 600;
@@ -507,7 +507,6 @@
 }
 
 .content {
-  overflow-x: hidden;
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: 1fr;
@@ -1232,11 +1231,13 @@
   bottom: 0;
   margin: auto;
   rotate: -90deg;
-  width: 7px;
-  height: 15px;
+  width: 5px;
+  height: 10px;
   background-color: var(--color-content-primary);
   -webkit-mask-image: url(../../../../images/slider-arrow.svg);
           mask-image: url(../../../../images/slider-arrow.svg);
+  -webkit-mask-size: contain;
+          mask-size: contain;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -1254,6 +1255,7 @@
 
 .form__custom-select_place_bikes {
   max-width: 114px;
+  box-sizing: border-box;
 }
 
 .subscribe-form {
