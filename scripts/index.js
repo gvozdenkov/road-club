@@ -263,15 +263,36 @@ const handleScrollLeft = () => {
 
 // ======================== page Setup =====================================
 const setPageContent = () => {
-  const bikes = filterBikesByType(getTrackType());
-  const selectedTrack = filterTrackByType(getTrackType())[0];
+  const trackType = getTrackType();
+  const sliderIndex = getSliderIndex();
+  const bikes = filterBikesByType(trackType);
+  const selectedTrack = filterTrackByType(trackType)[0];
 
   setLeadBikeImage(bikes);
 
   setTrackInfo(selectedTrack);
 
-  const currSliderPos = -(getSliderIndex() + 1) * getSlideWidth();
+  const currSliderPos = -(sliderIndex + 1) * getSlideWidth();
   scrollSlider(currSliderPos);
+
+  // add label for active track card and remove from prev card
+  const trackTypeLabels = document.querySelectorAll(".track-card__label");
+  trackTypeLabels[sliderIndex + 1].classList.add("track-card__label_visible");
+  if (
+    trackTypeLabels[sliderIndex].classList.contains("track-card__label_visible")
+  ) {
+    trackTypeLabels[sliderIndex].classList.remove("track-card__label_visible");
+  }
+
+  if (
+    trackTypeLabels[sliderIndex + 2].classList.contains(
+      "track-card__label_visible"
+    )
+  ) {
+    trackTypeLabels[sliderIndex + 2].classList.remove(
+      "track-card__label_visible"
+    );
+  }
 
   clearBikesCards();
   renderBikesCards(bikes);
