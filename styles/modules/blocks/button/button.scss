@@ -6,9 +6,29 @@
   padding: 0;
   cursor: pointer;
   user-select: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 
   background-color: var(--color-accent-primary);
   color: var(--color-button-text);
   border: 0;
   border-radius: $button-border-radius;
+  transition: 0.2s ease-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: var(--color-button-hover);
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 100%;
+    z-index: -1;
+    transition: right 0.2s ease-in;
+  }
+
+  &:hover::before {
+    right: 0%;
+  }
 }
