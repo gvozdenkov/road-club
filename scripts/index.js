@@ -3,9 +3,13 @@ const trackCardTemplate = document.querySelector(
   "#track-card-template"
 ).content;
 const trackTypeButtonTemplate = document.querySelector(
-  "#bike-type-button-template"
+  "#track-type-button-template"
+).content;
+const trackTypeOptionTemplate = document.querySelector(
+  "#track-type-option-template"
 ).content;
 const trackTypeButtonsContainer = document.querySelector(".track-type-buttons");
+const trackTypeOptionsContainer = document.querySelector(".track-type-options");
 const bikeCardContainer = document.querySelector(".bikes-grid");
 const leadBikeImage = document.querySelector(".lead__card-image");
 const leadBikeName = document.querySelector(".lead__bike-name");
@@ -116,11 +120,27 @@ function generateTrackTypeButtonElement(data) {
   return buttonElement;
 }
 
+function generateTrackTypeOptionElement(data) {
+  const optionElement = trackTypeOptionTemplate
+    .querySelector(".form__option")
+    .cloneNode(true);
+
+  optionElement.textContent = data.title;
+  optionElement.value = data.type;
+
+  return optionElement;
+}
+
 function renderTrackTypeButtons(tracks) {
   tracks.forEach((track) => {
     renderCard(
       generateTrackTypeButtonElement(track),
       trackTypeButtonsContainer
+    );
+
+    renderCard(
+      generateTrackTypeOptionElement(track),
+      trackTypeOptionsContainer
     );
   });
 }
@@ -206,7 +226,10 @@ const handleScrollRight = () => {
     prevSliderIndex + 1 >= tracks.length ? 0 : prevSliderIndex + 1;
   setSliderIndex(sliderIndex);
 
-  setTrackType(tracks[sliderIndex].type);
+  const trackType = tracks[sliderIndex].type;
+  setTrackType(trackType);
+
+  trackTypeOptionsContainer.value = trackType;
 
   setActiveTrackButton();
 
@@ -228,7 +251,10 @@ const handleScrollLeft = () => {
     prevSliderIndex - 1 < 0 ? tracks.length - 1 : prevSliderIndex - 1;
   setSliderIndex(sliderIndex);
 
-  setTrackType(tracks[sliderIndex].type);
+  const trackType = tracks[sliderIndex].type;
+  setTrackType(trackType);
+
+  trackTypeOptionsContainer.value = trackType;
 
   setActiveTrackButton();
 
@@ -275,6 +301,20 @@ trackTypeButtons.forEach((trackButton) => {
   trackButton.addEventListener("click", handleClickTrackTypeButton);
 });
 
+const handleChangeTrackTypeOption = (evt) => {
+  const trackType = evt.target.value;
+  setTrackType(trackType);
+  const sliderIndex = tracks.findIndex((track) => track.type === trackType);
+  setSliderIndex(sliderIndex);
+
+  setPageContent();
+};
+
+trackTypeOptionsContainer.addEventListener(
+  "change",
+  handleChangeTrackTypeOption
+);
+
 const handleWindowResize = () => {
   clearTimeout(timeout);
   timeout = setTimeout(setPageContent, 250);
@@ -285,6 +325,8 @@ window.addEventListener("resize", handleWindowResize);
 
 const trackTypes = [];
 tracks.forEach((track) => trackTypes.push(track.type));
+
+trackTypeOptionsContainer.value = getTrackType();
 
 renderTrackCards(tracks);
 setPageContent();

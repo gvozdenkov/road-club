@@ -159,13 +159,11 @@
             <label class="sr-only" for="track-type">Выбор велосипеда:</label>
             <div class="form__custom-select form__custom-select_place_bikes">
               <select
-                class="form__select-reset"
+                class="form__select-reset track-type-options"
                 id="track-type"
                 name="track-type"
               >
-                <option value="highway">Шоссе</option>
-                <option value="gravel">Грэвел</option>
-                <option value="triathlon">TT</option>
+                <!-- Bike type option here -->
               </select>
             </div>
           </form>
@@ -291,7 +289,7 @@
     </template>
 
     <!-- Bike type button Template -->
-    <template id="bike-type-button-template">
+    <template id="track-type-button-template">
       <li class="track-button">
         <button
           class="section-link section-link_type_muted track-type-btn"
@@ -300,6 +298,11 @@
           Шоссе
         </button>
       </li>
+    </template>
+
+    <!-- Bike type select item Template -->
+    <template id="track-type-option-template">
+      <option class="form__option" value="highway">Шоссе</option>
     </template>
 
     <script src="./scripts/theme.js"></script>
