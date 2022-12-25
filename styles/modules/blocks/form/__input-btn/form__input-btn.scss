@@ -1,0 +1,17 @@
+@use "../../../abstracts/variables" as *;
+
+.form__input-btn {
+  position: absolute;
+  right: 22px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+
+  cursor: pointer;
+  transition: $switch-theme-trans;
+}

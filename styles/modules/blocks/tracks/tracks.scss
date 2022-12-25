@@ -36,37 +36,3 @@
     padding-top: 40px;
   }
 }
-
-.tracks__section-divider {
-  position: absolute;
-  top: 40px;
-}
-
-.section-title {
-  max-width: 460px;
-  grid-area: title;
-  align-self: center;
-}
-
-.tracks__plain-text {
-  max-width: 460px;
-  grid-area: text;
-
-  @include width-md {
-    max-width: 100%;
-  }
-}
-
-.tracks__tracks-grid {
-  grid-area: grid;
-  left: 0;
-}
-
-.tracks__slider-buttons {
-  gap: 20px;
-  grid-area: buttons;
-
-  @include width-md {
-    justify-self: end;
-  }
-}

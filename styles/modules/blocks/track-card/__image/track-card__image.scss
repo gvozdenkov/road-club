@@ -1,0 +1,9 @@
+@use "../../../abstracts/mixins" as *;
+
+.track-card__image {
+  height: 100%;
+
+  @include width-md {
+    width: 100%;
+  }
+}

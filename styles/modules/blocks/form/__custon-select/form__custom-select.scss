@@ -1,0 +1,39 @@
+@use "../../../abstracts/variables" as *;
+@use "../../../abstracts/mixins" as *;
+
+.form__custom-select {
+  border: 1px solid var(--color-form-custom-select);
+  border-radius: 2px;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.56;
+  position: relative;
+  cursor: pointer;
+  transition: $switch-theme-trans;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    rotate: -90deg;
+    width: 7px;
+    height: 15px;
+    background-color: var(--color-content-primary);
+    mask-image: url(../../../../images/slider-arrow.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  &:focus-within {
+    border-color: var(--color-content-primary);
+  }
+
+  @include width-md {
+    font-size: 11px;
+    line-height: 1.27;
+  }
+}

@@ -5,27 +5,3 @@
   scroll-snap-align: start;
   position: relative;
 }
-
-.track-card__image {
-  height: 100%;
-
-  @include width-md {
-    width: 100%;
-  }
-}
-
-.track-card__label {
-  position: absolute;
-  left: 0;
-  bottom: 16px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-
-  @include width-xs {
-    width: 70px;
-  }
-}
-
-.track-card__label_visible {
-  opacity: 1;
-}

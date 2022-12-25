@@ -1,0 +1,15 @@
+@use "../../../abstracts/mixins" as *;
+
+.lead__card-wrap {
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+  place-self: stretch start;
+  margin-left: 50px;
+  position: relative;
+
+  @include width-md {
+    grid-column: 1;
+    grid-row: 3;
+    margin-left: 0;
+  }
+}

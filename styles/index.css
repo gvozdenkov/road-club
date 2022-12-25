@@ -212,6 +212,14 @@
   }
 }
 
+.section-link_active {
+  font-weight: 600;
+  color: var(--color-landing-link-active);
+}
+.section-link_active:hover, .section-link_active:focus {
+  color: var(--color-landing-link-active);
+}
+
 .section-link_type_muted {
   color: var(--color-landing-link-muted);
   transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
@@ -228,14 +236,6 @@
     font-size: 14px;
     line-height: 1.43;
   }
-}
-
-.section-link_active {
-  font-weight: 600;
-  color: var(--color-landing-link-active);
-}
-.section-link_active:hover, .section-link_active:focus {
-  color: var(--color-landing-link-active);
 }
 
 .card {
@@ -266,6 +266,23 @@
   min-width: 0;
   word-wrap: break-word;
   word-break: break-all;
+}
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% -50%;
+  width: calc(100% - var(--gutter-side) * 2);
+  height: 1px;
+  background-color: var(--color-section-divider);
+  opacity: 0;
+}
+@media (max-width: 576px) {
+  .section-divider::before {
+    opacity: 1;
+  }
 }
 
 .header {
@@ -603,6 +620,7 @@
   grid-row: 1/-1;
   place-self: stretch start;
   margin-left: 50px;
+  position: relative;
 }
 @media (max-width: 768px) {
   .lead__card-wrap {
@@ -743,23 +761,6 @@
   }
 }
 
-.section-divider::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  translate: -50% -50%;
-  width: calc(100% - var(--gutter-side) * 2);
-  height: 1px;
-  background-color: var(--color-section-divider);
-  opacity: 0;
-}
-@media (max-width: 576px) {
-  .section-divider::before {
-    opacity: 1;
-  }
-}
-
 .bikes {
   padding: 0 var(--gutter-side) 0;
   position: relative;
@@ -778,11 +779,6 @@
   }
 }
 
-.bikes__section-divider {
-  position: absolute;
-  top: 40px;
-}
-
 .bikes__section-title {
   grid-area: title;
 }
@@ -798,7 +794,7 @@
   }
 }
 
-.bikes__biges-grid {
+.bikes__bikes-grid {
   grid-area: bikes;
 }
 
@@ -897,12 +893,7 @@
   }
 }
 
-.tracks__section-divider {
-  position: absolute;
-  top: 40px;
-}
-
-.section-title {
+.tracks__section-title {
   max-width: 460px;
   grid-area: title;
   align-self: center;
@@ -1100,16 +1091,6 @@
   transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-.subscribe-form {
-  min-width: 360px;
-  width: 100%;
-}
-@media (max-width: 768px) {
-  .subscribe-form {
-    min-width: initial;
-  }
-}
-
 .form__title {
   font-size: 24px;
   font-weight: 600;
@@ -1214,18 +1195,6 @@
   transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-.subscribe-form__submit {
-  opacity: 0;
-}
-
-.subscribe-form__submit:focus {
-  opacity: 1;
-}
-
-.form__input-with-btn:focus + .subscribe-form__submit {
-  opacity: 1;
-}
-
 .form__select-reset {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -1285,4 +1254,26 @@
 
 .form__custom-select_place_bikes {
   max-width: 114px;
+}
+
+.subscribe-form {
+  min-width: 360px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .subscribe-form {
+    min-width: initial;
+  }
+}
+
+.subscribe-form__submit {
+  opacity: 0;
+}
+
+.subscribe-form__submit:focus {
+  opacity: 1;
+}
+
+.form__input-with-btn:focus + .subscribe-form__submit {
+  opacity: 1;
 }/*# sourceMappingURL=index.css.map */

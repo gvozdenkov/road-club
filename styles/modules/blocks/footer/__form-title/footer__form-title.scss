@@ -1,0 +1,10 @@
+@use "../../../abstracts/mixins" as *;
+
+.footer__form-title {
+  max-width: 229px;
+
+  @include width-md {
+    max-width: 100%;
+    min-width: 0;
+  }
+}

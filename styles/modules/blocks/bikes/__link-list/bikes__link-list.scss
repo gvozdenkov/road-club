@@ -1,0 +1,11 @@
+@use "../../../abstracts/mixins" as *;
+
+.bikes__link-list {
+  gap: 40px;
+  grid-area: links;
+  place-self: end;
+
+  @include width-sm {
+    display: none;
+  }
+}

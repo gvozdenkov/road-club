@@ -1,0 +1,11 @@
+@use "../../../abstracts/mixins" as *;
+
+.bikes__slider-dots {
+  grid-area: dots;
+  justify-self: center;
+  display: none;
+
+  @include width-sm {
+    display: flex;
+  }
+}

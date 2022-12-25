@@ -1,0 +1,33 @@
+@use "../../../abstracts/mixins" as *;
+
+.lead__bike-name {
+  line-height: 1;
+  grid-area: bike-name;
+  justify-self: start;
+  position: relative;
+
+  min-width: 0;
+  word-wrap: break-word;
+  word-break: break-all;
+  max-width: 300px;
+
+  @include width-lg {
+    max-width: 200px;
+  }
+
+  @include width-md {
+    display: none;
+  }
+}
+
+.lead__bike-name::after {
+  $width: 132px;
+
+  content: "";
+  height: 2px;
+  width: $width;
+  background-color: #d7d4d4;
+  position: absolute;
+  top: 50%;
+  right: -$width - 20px;
+}

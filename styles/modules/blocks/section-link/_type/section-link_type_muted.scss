@@ -1,0 +1,12 @@
+@use "../../../abstracts/variables" as *;
+
+.section-link_type_muted {
+  color: var(--color-landing-link-muted);
+
+  &:hover,
+  &:focus {
+    color: var(--color-landing-link-muted-hover);
+  }
+
+  transition: $switch-theme-trans;
+}

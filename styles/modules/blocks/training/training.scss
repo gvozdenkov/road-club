@@ -33,24 +33,3 @@
     padding-bottom: 60px;
   }
 }
-
-.training__image {
-  grid-area: image;
-  height: 100%;
-}
-
-.training__title {
-  grid-area: title;
-  min-width: 0;
-  word-wrap: break-word;
-}
-
-.training__desc {
-  grid-area: desc;
-}
-
-.training__link-list {
-  margin-top: auto;
-  grid-area: links;
-  margin-top: 30px;
-}

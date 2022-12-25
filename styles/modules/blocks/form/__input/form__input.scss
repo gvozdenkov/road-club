@@ -1,0 +1,44 @@
+@use "../../../abstracts/variables" as *;
+
+.form__input {
+  width: 100%;
+  max-height: 50px;
+  background-color: transparent;
+  color: inherit;
+  padding: 11px 22px 11px 20px;
+  box-sizing: border-box;
+
+  border: 1px solid;
+  border-color: var(--color-form-input-border);
+  border-radius: $button-border-radius;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 2.15;
+
+  transition: border-color 0.2s ease-out;
+}
+
+.form__input::placeholder {
+  color: var(--color-content-secondary);
+  transition: $switch-theme-trans;
+}
+
+.form__input:hover {
+  outline: none;
+}
+
+.form__input:focus,
+.form__input:active {
+  outline: none;
+  border-color: var(--color-form-input-border-focus);
+}
+
+.form__input:hover::placeholder {
+  color: var(--color-content-primary);
+}
+
+.form__input:focus::placeholder,
+.form__input:active::placeholder {
+  color: transparent;
+}

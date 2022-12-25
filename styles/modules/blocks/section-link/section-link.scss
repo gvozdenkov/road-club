@@ -28,33 +28,3 @@
     line-height: 1.27;
   }
 }
-
-.section-link_type_muted {
-  color: var(--color-landing-link-muted);
-
-  &:hover,
-  &:focus {
-    color: var(--color-landing-link-muted-hover);
-  }
-
-  transition: $switch-theme-trans;
-}
-
-.section-link_type_bold {
-  font-weight: 600;
-
-  @include width-md {
-    font-size: 14px;
-    line-height: 1.43;
-  }
-}
-
-.section-link_active {
-  font-weight: 600;
-  color: var(--color-landing-link-active);
-
-  &:hover,
-  &:focus {
-    color: var(--color-landing-link-active);
-  }
-}

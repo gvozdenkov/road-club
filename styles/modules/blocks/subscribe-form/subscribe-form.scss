@@ -1,0 +1,10 @@
+@use "../../abstracts/mixins" as *;
+
+.subscribe-form {
+  min-width: 360px;
+  width: 100%;
+
+  @include width-md {
+    min-width: initial;
+  }
+}

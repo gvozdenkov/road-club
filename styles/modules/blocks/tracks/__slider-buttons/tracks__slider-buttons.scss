@@ -1,0 +1,10 @@
+@use "../../../abstracts/mixins" as *;
+
+.tracks__slider-buttons {
+  gap: 20px;
+  grid-area: buttons;
+
+  @include width-md {
+    justify-self: end;
+  }
+}
