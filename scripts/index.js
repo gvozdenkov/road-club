@@ -1,94 +1,13 @@
-const bikeCardTemplate = document.querySelector("#bike-card-template").content;
-const trackCardTemplate = document.querySelector(
-  "#track-card-template"
-).content;
-const trackTypeButtonTemplate = document.querySelector(
-  "#track-type-button-template"
-).content;
-const trackTypeOptionTemplate = document.querySelector(
-  "#track-type-option-template"
-).content;
-const trackTypeButtonsContainer = document.querySelector(".track-type-buttons");
-const trackTypeOptionsContainer = document.querySelector(".track-type-options");
-const bikeCardContainer = document.querySelector(".bikes-grid");
-const leadBikeImage = document.querySelector(".lead__card-image");
-const leadBikeName = document.querySelector(".lead__bike-name");
-const trackTypeTitle = document.querySelector(".tracks__section-title");
-const trackTypeDesc = document.querySelector(".tracks__plain-text");
-
-const tracksGrid = document.querySelector(".tracks-grid");
+const trackTypeButtons = document.querySelectorAll(".track-type-btn");
 const sliderLeftButton = document.querySelector(".slider-button_type_prev");
 const sliderRightButton = document.querySelector(".slider-button_type_next");
 
-initTrackType();
-setSliderIndex(0);
-renderTrackTypeButtons(tracks);
-setActiveTrackButton();
-const trackTypeButtons = document.querySelectorAll(".track-type-btn");
-
-// ====================== render page functions ========================
-function setTrackType(trackType) {
-  localStorage.setItem("track-type", trackType);
-}
-
-function getTrackType() {
-  return localStorage.getItem("track-type");
-}
-
-function initTrackType() {
-  const trackType = getTrackType();
-  !trackType ? setTrackType(tracks[0].type) : null;
-}
-
-const filterBikesByType = (bikeType) => {
-  return bikes.filter((bike) => bike.type === bikeType);
-};
-
-const filterTrackByType = (trackType) => {
-  return tracks.filter((track) => track.type === trackType);
-};
-
-const generateBikeCardElement = (data) => {
-  const cardElement = bikeCardTemplate
-    .querySelector(".bike-card")
-    .cloneNode(true);
-
-  const cardImageElement = cardElement.querySelector(".image");
-  cardImageElement.src = data.link;
-  cardImageElement.alt = `${data.name}.`;
-  cardElement.querySelector(".card__title").textContent = data.name;
-
-  return cardElement;
-};
-
-function renderCard(cardElement, cardsContainer) {
-  cardsContainer.append(cardElement);
-}
-
-const renderBikesCards = (bikes) => {
-  bikes.forEach((bike) => {
-    renderCard(generateBikeCardElement(bike), bikeCardContainer);
-  });
-};
-
+// ====================== update page functions ========================
 const clearBikesCards = () => {
   bikeCardContainer.textContent = "";
 };
 
-const setLeadBikeImage = (bikes) => {
-  const randomeBikeIndex = Math.floor(Math.random() * bikes.length);
-  leadBikeImage.src = bikes[randomeBikeIndex].link;
-  leadBikeImage.alt = `${bikes[randomeBikeIndex].name}.`;
-  leadBikeName.textContent = bikes[randomeBikeIndex].name;
-};
-
-const setTrackInfo = (track) => {
-  trackTypeTitle.textContent = track.title;
-  trackTypeDesc.textContent = track.desc;
-};
-
 function unsetCurrentActiveButton() {
-  const trackTypeButtons = document.querySelectorAll(".track-type-btn");
   trackTypeButtons.forEach((trackButton) => {
     if (trackButton.classList.contains("section-link_active")) {
       trackButton.classList.remove("section-link_active");
@@ -96,55 +15,17 @@ function unsetCurrentActiveButton() {
   });
 }
 
-function setActiveTrackButton() {
-  unsetCurrentActiveButton();
-  const trackTypeButtons = document.querySelectorAll(".track-type-btn");
-
+function setActiveTrackButton(trackType) {
   trackTypeButtons.forEach((trackButton) => {
-    if (trackButton.value === getTrackType()) {
+    if (trackButton.value === trackType) {
       trackButton.classList.add("section-link_active");
     }
   });
 }
 
-// ====================== Bike types buttons ==========================
-function generateTrackTypeButtonElement(data) {
-  const buttonElement = trackTypeButtonTemplate
-    .querySelector(".track-button")
-    .cloneNode(true);
-
-  const button = buttonElement.querySelector(".track-type-btn");
-  button.textContent = data.title;
-  button.value = data.type;
-
-  return buttonElement;
-}
-
-function generateTrackTypeOptionElement(data) {
-  const optionElement = trackTypeOptionTemplate
-    .querySelector(".form__option")
-    .cloneNode(true);
-
-  optionElement.textContent = data.title;
-  optionElement.value = data.type;
-
-  return optionElement;
-}
-
-function renderTrackTypeButtons(tracks) {
-  tracks.forEach((track) => {
-    renderCard(
-      generateTrackTypeButtonElement(track),
-      trackTypeButtonsContainer
-    );
-
-    renderCard(
-      generateTrackTypeOptionElement(track),
-      trackTypeOptionsContainer
-    );
-  });
-}
-
+const setTrackTypeActiveOption = (trackType) => {
+  trackTypeOptionsContainer.value = trackType;
+};
 // ====================== Slider =======================================
 function setSliderIndex(index) {
   localStorage.setItem("slider-index", index);
@@ -155,9 +36,9 @@ const getSliderIndex = () => {
 };
 
 const getSlideWidth = () => {
-  const firstSlide = tracksGrid.querySelector(".track-card");
+  const firstSlide = tracksContainer.querySelector(".track-card");
   const firstSlideWidth = firstSlide.offsetWidth;
-  const gap = parseInt(window.getComputedStyle(tracksGrid).gap);
+  const gap = parseInt(window.getComputedStyle(tracksContainer).gap);
 
   return firstSlideWidth + gap;
 };
@@ -176,40 +57,33 @@ function initSliderCurrentPos() {
 }
 
 const scrollSlider = (positionOfScroll) => {
-  tracksGrid.style.setProperty("left", `${positionOfScroll}px`);
+  tracksContainer.style.setProperty("left", `${positionOfScroll}px`);
 };
 
-const generateTrackCardElement = (data) => {
-  const cardElement = trackCardTemplate
-    .querySelector(".track-card")
-    .cloneNode(true);
+// =============================================================
+const updatePage = () => {
+  const trackType = getTrackType();
+  const bikes = filterBikesByType(trackType);
+  const selectedTrack = filterTrackByType(trackType);
 
-  cardElement.setAttribute("data-track", data.type);
+  setLeadBike(bikes);
 
-  const cardImageElement = cardElement.querySelector(".track-card__image");
-  cardImageElement.src = data.link;
-  cardImageElement.alt = `${data.title}.`;
+  setTrackInfo(selectedTrack);
 
-  const cardLabelElement = cardElement.querySelector(".track-card__label");
-  const labelLink = `${data.link.slice(1, -4)}-label.svg`;
-  cardLabelElement.src = labelLink;
+  unsetCurrentActiveButton();
+  setActiveTrackButton(trackType);
+  setTrackTypeActiveOption(trackType);
 
-  return cardElement;
+  clearBikesCards();
+  renderBikeCards(bikes);
+
+  // const currSliderPos = -(sliderIndex + 1) * getSlideWidth();
+  // scrollSlider(currSliderPos);
+
+  // const sliderIndex = getSliderIndex();
 };
 
-const renderTrackCards = (tracks) => {
-  // render last card at start for loop
-  renderCard(generateTrackCardElement(tracks[tracks.length - 1]), tracksGrid);
-
-  // render all cards
-  tracks.forEach((track) => {
-    renderCard(generateTrackCardElement(track), tracksGrid);
-  });
-
-  // render 1st card at the end for loop
-  renderCard(generateTrackCardElement(tracks[0]), tracksGrid);
-};
-
+// ====================== event handlers ==============================
 const handleScrollRight = () => {
   let newPos = getSliderCurrentPos();
   const prevSliderIndex = getSliderIndex();
@@ -229,11 +103,7 @@ const handleScrollRight = () => {
   const trackType = tracks[sliderIndex].type;
   setTrackType(trackType);
 
-  trackTypeOptionsContainer.value = trackType;
-
-  setActiveTrackButton();
-
-  setPageContent();
+  updatePage();
 };
 
 const handleScrollLeft = () => {
@@ -254,66 +124,24 @@ const handleScrollLeft = () => {
   const trackType = tracks[sliderIndex].type;
   setTrackType(trackType);
 
-  trackTypeOptionsContainer.value = trackType;
-
-  setActiveTrackButton();
-
-  setPageContent();
-};
-
-// ======================== page Setup =====================================
-const setPageContent = () => {
-  const trackType = getTrackType();
-  const sliderIndex = getSliderIndex();
-  const bikes = filterBikesByType(trackType);
-  const selectedTrack = filterTrackByType(trackType)[0];
-
-  setLeadBikeImage(bikes);
-
-  setTrackInfo(selectedTrack);
-
-  const currSliderPos = -(sliderIndex + 1) * getSlideWidth();
-  scrollSlider(currSliderPos);
-
-  // add label for active track card and remove from prev card
-  const trackTypeLabels = document.querySelectorAll(".track-card__label");
-  trackTypeLabels[sliderIndex + 1].classList.add("track-card__label_visible");
-  if (
-    trackTypeLabels[sliderIndex].classList.contains("track-card__label_visible")
-  ) {
-    trackTypeLabels[sliderIndex].classList.remove("track-card__label_visible");
-  }
-
-  if (
-    trackTypeLabels[sliderIndex + 2].classList.contains(
-      "track-card__label_visible"
-    )
-  ) {
-    trackTypeLabels[sliderIndex + 2].classList.remove(
-      "track-card__label_visible"
-    );
-  }
-
-  clearBikesCards();
-  renderBikesCards(bikes);
+  updatePage();
 };
 
 const handleClickTrackTypeButton = (evt) => {
   clickedButton = evt.target;
 
   setTrackType(clickedButton.value);
-  setActiveTrackButton();
-
-  const sliderIndex = tracks.findIndex(
-    (track) => track.type === clickedButton.value
-  );
-  setSliderIndex(sliderIndex);
-  setSliderCurrentPos(-(sliderIndex + 1) * getSlideWidth());
-
-  setPageContent();
+  updatePage();
 };
 
-// ======================== page initialize ================================
+const handleChangeTrackTypeOption = (evt) => {
+  const trackType = evt.target.value;
+
+  setTrackType(trackType);
+  updatePage();
+};
+
+// ======================== Listeners ================================
 sliderLeftButton.addEventListener("click", handleScrollLeft);
 
 sliderRightButton.addEventListener("click", handleScrollRight);
@@ -322,34 +150,31 @@ trackTypeButtons.forEach((trackButton) => {
   trackButton.addEventListener("click", handleClickTrackTypeButton);
 });
 
-const handleChangeTrackTypeOption = (evt) => {
-  const trackType = evt.target.value;
-  setTrackType(trackType);
-  const sliderIndex = tracks.findIndex((track) => track.type === trackType);
-  setSliderIndex(sliderIndex);
-
-  setPageContent();
-};
-
 trackTypeOptionsContainer.addEventListener(
   "change",
   handleChangeTrackTypeOption
 );
 
-const handleWindowResize = () => {
-  clearTimeout(timeout);
-  timeout = setTimeout(setPageContent, 250);
-};
+window.addEventListener("resize", throttle(updatePage, 250));
 
-let timeout = false;
-window.addEventListener("resize", handleWindowResize);
+// ==============================================================
+updatePage();
 
-const trackTypes = [];
-tracks.forEach((track) => trackTypes.push(track.type));
+// add label for active track card and remove from prev card
+// const trackTypeLabels = document.querySelectorAll(".track-card__label");
+// trackTypeLabels[sliderIndex + 1].classList.add("track-card__label_visible");
+// if (
+//   trackTypeLabels[sliderIndex].classList.contains("track-card__label_visible")
+// ) {
+//   trackTypeLabels[sliderIndex].classList.remove("track-card__label_visible");
+// }
 
-trackTypeOptionsContainer.value = getTrackType();
-
-renderTrackCards(tracks);
-setPageContent();
-initSliderCurrentPos();
-scrollSlider(getSliderCurrentPos());
+// if (
+//   trackTypeLabels[sliderIndex + 2].classList.contains(
+//     "track-card__label_visible"
+//   )
+// ) {
+//   trackTypeLabels[sliderIndex + 2].classList.remove(
+//     "track-card__label_visible"
+//   );
+// }
