@@ -69,7 +69,7 @@ const setTrackInfo = (track) => {
 // track cards
 const generateTrackCardElement = (data) => {
   const cardElement = trackCardTemplate
-    .querySelector(".track-card")
+    .querySelector(".tracks-grid__item")
     .cloneNode(true);
 
   cardElement.setAttribute("data-track", data.type);

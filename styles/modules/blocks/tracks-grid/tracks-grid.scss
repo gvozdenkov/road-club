@@ -2,17 +2,19 @@
 @use "../../abstracts/mixins" as *;
 
 .tracks-grid {
+  padding: 0;
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(2, minmax(650px, 50%));
+  grid-auto-columns: minmax(650px, 50%);
   align-items: stretch;
   gap: var(--slider-gap);
   position: relative;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 
   // transition: left 0.6s ease;
 
   @include width-md {
-    scroll-snap-type: x mandatory;
     grid-template-columns: 100%;
   }
 
@@ -21,3 +23,8 @@
   }
 }
 
+.tracks-grid__item {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

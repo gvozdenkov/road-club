@@ -126,9 +126,9 @@
             пелотоне, но тренироваться можно и самостоятельно.
           </p>
 
-          <div class="tracks-grid tracks__tracks-grid">
+          <ul class="tracks-grid tracks__tracks-grid">
             <!-- render Track cards here -->
-          </div>
+          </ul>
 
           <ul class="link-list tracks__slider-buttons">
             <li>
@@ -278,18 +278,23 @@
 
     <!-- Track card Template -->
     <template id="track-card-template">
-      <article class="track-card tracks-grid__track-card" data-track="highway">
-        <img
-          class="image track-card__image"
-          src="./images/track-type/highway.jpg"
-          alt=""
-        />
-        <img
-          class="track-card__label"
-          src="./images/track-type/highway-label.svg"
-          alt=""
-        />
-      </article>
+      <li class="tracks-grid__item">
+        <article
+          class="track-card tracks-grid__track-card"
+          data-track="highway"
+        >
+          <img
+            class="image track-card__image"
+            src="./images/track-type/highway.jpg"
+            alt=""
+          />
+          <img
+            class="track-card__label"
+            src="./images/track-type/highway-label.svg"
+            alt=""
+          />
+        </article>
+      </li>
     </template>
 
     <!-- Bike type button Template -->
