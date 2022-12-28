@@ -40,8 +40,38 @@ const scrollSlider = (scrollPos) => {
     left: scrollPos,
     behavior: "smooth",
   });
+};
 
-  console.log(tracksContainer.scrollLeft);
+const scrollSliderTo = (trackType) => {
+  const currIndex = tracks.findIndex((track) => track.type === trackType);
+  const scrollPos = getSlideWidth() * (currIndex + 1);
+
+  tracksContainer.scrollTo({
+    left: scrollPos,
+    behavior: "smooth",
+  });
+};
+
+const rewindSliderTo = (pos) => {
+  tracksContainer.scrollTo(pos, 0);
+};
+
+const getNextTrackType = () => {
+  const currTrackType = getTrackType();
+  const currIndex = tracks.findIndex((track) => track.type === currTrackType);
+
+  currIndex === tracks.length - 1
+    ? setTrackType(tracks[0].type)
+    : setTrackType(tracks[currIndex + 1].type);
+};
+
+const getPrevTrackType = () => {
+  const currTrackType = getTrackType();
+  const currIndex = tracks.findIndex((track) => track.type === currTrackType);
+
+  currIndex === 0
+    ? setTrackType(tracks[tracks.length - 1].type)
+    : setTrackType(tracks[currIndex - 1].type);
 };
 
 // =============================================================
@@ -68,36 +98,32 @@ const slideCount = tracks.length;
 const handleScrollRight = () => {
   const slideWidth = getSlideWidth();
 
-  if (tracksContainer.scrollLeft === 0) {
-    tracksContainer.scrollTo((left = slideWidth * slideCount), 0);
-  }
+  tracksContainer.scrollLeft === 0
+    ? rewindSliderTo(slideWidth * slideCount)
+    : null;
 
   scrollSlider(-slideWidth);
+  getPrevTrackType();
   updatePage();
 };
 
 const handleScrollLeft = () => {
   const slideWidth = getSlideWidth();
 
-  if (tracksContainer.scrollLeft === slideWidth * slideCount) {
-    tracksContainer.scrollTo((left = 0), 0);
-  }
+  tracksContainer.scrollLeft === slideWidth * slideCount
+    ? rewindSliderTo(0)
+    : null;
 
   scrollSlider(slideWidth);
+  getNextTrackType();
   updatePage();
 };
 
-const handleClickTrackTypeButton = (evt) => {
-  clickedButton = evt.target;
-
-  setTrackType(clickedButton.value);
-  updatePage();
-};
-
-const handleChangeTrackTypeOption = (evt) => {
+const handleChangeTrackType = (evt) => {
   const trackType = evt.target.value;
 
   setTrackType(trackType);
+  scrollSliderTo(trackType);
   updatePage();
 };
 
@@ -107,16 +133,13 @@ sliderLeftButton.addEventListener("click", handleScrollLeft);
 sliderRightButton.addEventListener("click", handleScrollRight);
 
 trackTypeButtons.forEach((trackButton) => {
-  trackButton.addEventListener("click", handleClickTrackTypeButton);
+  trackButton.addEventListener("click", handleChangeTrackType);
 });
 
-trackTypeOptionsContainer.addEventListener(
-  "change",
-  handleChangeTrackTypeOption
-);
+trackTypeOptionsContainer.addEventListener("change", handleChangeTrackType);
 
 window.addEventListener("resize", throttle(getSlideWidth, 250));
 
 // ==============================================================
-scrollSlider(getSlideWidth());
+scrollSliderTo(getTrackType());
 updatePage();
