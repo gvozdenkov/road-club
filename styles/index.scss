@@ -126,3 +126,7 @@
 
 @use "./modules/blocks/subscribe-form/subscribe-form.scss";
 @use "./modules/blocks/subscribe-form/__submit/subscribe-form__submit.scss";
+
+@import "../vendor/normalize.css";
+@import "../vendor/fonts.css";
+@import "../vendor/color-theme.css";
