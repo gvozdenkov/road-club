@@ -72,7 +72,9 @@ const generateTrackCardElement = (data) => {
     .querySelector(".tracks-grid__item")
     .cloneNode(true);
 
-  cardElement.setAttribute("data-track", data.type);
+  cardElement
+    .querySelector(".track-card")
+    .setAttribute("data-track", data.type);
 
   const cardImageElement = cardElement.querySelector(".track-card__image");
   cardImageElement.src = data.link;

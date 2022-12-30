@@ -26,6 +26,26 @@ function setActiveTrackButton(trackType) {
 const setTrackTypeActiveOption = (trackType) => {
   trackTypeOptionsContainer.value = trackType;
 };
+
+const showTrackLabel = (trackType) => {
+  const activeTrackCard = Array.from(
+    document.querySelectorAll(`[data-track='${trackType}']`)
+  );
+
+  activeTrackCard.forEach((card) => {
+    const trackLabel = card.querySelector(".track-card__label");
+    trackLabel.classList.add("track-card__label_visible");
+  });
+};
+
+const clearTrackLabels = () => {
+  const trackLabels = Array.from(
+    document.querySelectorAll(".track-card__label")
+  );
+  trackLabels.forEach((label) =>
+    label.classList.remove("track-card__label_visible")
+  );
+};
 // ====================== Slider =======================================
 const getSlideWidth = () => {
   const firstSlide = tracksContainer.querySelector(".track-card");
@@ -83,6 +103,9 @@ const updatePage = () => {
   setLeadBike(bikes);
 
   setTrackInfo(selectedTrack);
+
+  clearTrackLabels();
+  showTrackLabel(trackType);
 
   unsetCurrentActiveButton();
   setActiveTrackButton(trackType);

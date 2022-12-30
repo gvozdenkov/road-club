@@ -12,10 +12,8 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
 
-  // transition: left 0.6s ease;
-
   @include width-md {
-    grid-template-columns: 100%;
+    grid-auto-columns: 100%;
   }
 
   &::-webkit-scrollbar {

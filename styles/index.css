@@ -897,6 +897,7 @@
     align-self: end;
     z-index: 2;
     margin-bottom: 16px;
+    color: var(--color-content-primary-inverted);
   }
 }
 
@@ -948,7 +949,7 @@
   grid-area: buttons;
   place-self: center start;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .tracks__slider-buttons {
     place-self: center end;
   }
@@ -968,7 +969,7 @@
 }
 @media (max-width: 768px) {
   .tracks-grid {
-    grid-template-columns: 100%;
+    grid-auto-columns: 100%;
   }
 }
 .tracks-grid::-webkit-scrollbar {
@@ -984,6 +985,11 @@
 .tracks-grid__track-card {
   aspect-ratio: 650/400;
   max-width: 650px;
+}
+@media (max-width: 768px) {
+  .tracks-grid__track-card {
+    max-width: 100%;
+  }
 }
 
 .track-card {
@@ -1299,6 +1305,15 @@
 .form__custom-select_place_bikes {
   max-width: 114px;
   box-sizing: border-box;
+}
+
+.form__option {
+  color: var(--color-content-primary);
+}
+@media (max-width: 576px) {
+  .form__option {
+    color: var(--color-content-primary-inverted);
+  }
 }
 
 .subscribe-form {
