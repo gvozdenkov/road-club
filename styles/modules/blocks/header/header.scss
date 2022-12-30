@@ -1,4 +1,5 @@
 @use "../../abstracts/variables.scss" as *;
+@use "../../abstracts/mixins.scss" as *;
 
 .header {
   position: sticky;
@@ -12,4 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @include width-md {
+    padding: 0 18px;
+  }
 }

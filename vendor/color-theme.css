@@ -1,4 +1,4 @@
-.light {
+:root {
   --color-background-primary: #f4f4f4;
   --color-background-secondary: #efefef;
   --color-background-card: white;
@@ -41,7 +41,7 @@
   --color-background-slider-button-hover: #43434360;
   --color-background-theme-button: #545454;
 
-  --color-content-primary: #ffffff;
+  --color-content-primary: #fff;
   --color-content-secondary: #e6e6e670;
   --color-content-muted: #676767;
 
@@ -51,6 +51,15 @@
 
   --color-link-hover: #ffffff65;
   --color-link-active: #e5e5e550;
+
+  --color-landing-link: #f4f4f4;
+  --color-landing-link-hover: rgba(244, 244, 244, 0.75);
+  --color-landing-link-active: #fff;
+  --color-landing-link-muted: #e5e5e5;
+  --color-landing-link-muted-hover: rgba(229 229 229 / 0.6);
+
+  --color-slider-dot: #e6e6e670;
+  --color-slider-dot-active: #fff;
 
   --color-section-divider: #e3e3e3;
 

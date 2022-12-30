@@ -3,8 +3,9 @@
 .tracks__slider-buttons {
   gap: 20px;
   grid-area: buttons;
+  place-self: center start;
 
-  @include width-md {
-    justify-self: end;
+  @include width-sm {
+    place-self: center end;
   }
 }

@@ -5,12 +5,12 @@ const theme = localStorage.getItem("theme");
 theme ? page.classList.add(theme) : null;
 
 const switchTheme = () => {
-  if (page.classList.contains("light")) {
-    page.classList.replace("light", "dark");
-    localStorage.setItem("theme", "dark");
-  } else {
-    page.classList.replace("dark", "light");
+  if (page.classList.contains("dark")) {
+    page.classList.remove("dark");
     localStorage.setItem("theme", "light");
+  } else {
+    page.classList.add("dark");
+    localStorage.setItem("theme", "dark");
   }
 };
 

@@ -40,7 +40,6 @@
   font-family: "Inter", "Arial", sans-serif;
   color: var(--color-content-primary);
   background-color: var(--color-background-primary);
-  overflow-x: hidden;
   transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
@@ -71,13 +70,14 @@
 .section-title {
   font-size: 55px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.09;
   letter-spacing: -0.5px;
   margin: 0;
 }
 @media (max-width: 768px) {
   .section-title {
     font-size: 32px;
+    line-height: 1.25;
   }
 }
 
@@ -140,6 +140,10 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.29;
+  letter-spacing: 1px;
   background-color: var(--color-accent-primary);
   color: var(--color-button-text);
   border: 0;
@@ -159,6 +163,12 @@
 }
 .button:hover::before {
   right: 0%;
+}
+@media (max-width: 576px) {
+  .button {
+    font-size: 13px;
+    line-height: 1.46;
+  }
 }
 
 .color-theme {
@@ -215,14 +225,6 @@
   }
 }
 
-.section-link_active {
-  font-weight: 600;
-  color: var(--color-landing-link-active);
-}
-.section-link_active:hover, .section-link_active:focus {
-  color: var(--color-landing-link-active);
-}
-
 .section-link_type_muted {
   color: var(--color-landing-link-muted);
   transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
@@ -239,6 +241,14 @@
     font-size: 14px;
     line-height: 1.43;
   }
+}
+
+.section-link_active {
+  font-weight: 600;
+  color: var(--color-landing-link-active);
+}
+.section-link_active:hover, .section-link_active:focus {
+  color: var(--color-landing-link-active);
 }
 
 .card {
@@ -265,10 +275,17 @@
   font-size: 18px;
   font-weight: 600;
   line-height: 1.22;
+  color: var(--color-content-primary);
   margin: 0;
   min-width: 0;
   word-wrap: break-word;
   word-break: break-all;
+}
+@media (max-width: 576px) {
+  .card__title {
+    font-size: 14px;
+    line-height: 1.29;
+  }
 }
 
 .section-divider::before {
@@ -301,13 +318,15 @@
   align-items: center;
   justify-content: flex-end;
 }
+@media (max-width: 768px) {
+  .header {
+    padding: 0 18px;
+  }
+}
 
 .burger {
   display: none;
-  position: absolute;
   z-index: 9999;
-  right: var(--gutter-side);
-  top: 18px;
   width: 22px;
   aspect-ratio: 1;
   border: 0;
@@ -553,7 +572,7 @@
 
 .lead__section-title {
   grid-area: title;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 @media (max-width: 768px) {
   .lead__section-title {
@@ -766,6 +785,7 @@
 .bikes {
   padding: 0 var(--gutter-side) 0;
   position: relative;
+  overflow-x: hidden;
   display: grid;
   grid-template: "title . links" ". . ." 120px "bikes bikes bikes"/1fr 1fr 1fr;
 }
@@ -822,6 +842,9 @@
 }
 
 .bikes-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -841,6 +864,10 @@
   .bikes-grid::-webkit-scrollbar {
     display: none;
   }
+}
+
+.bike-card-link {
+  text-decoration: none;
 }
 
 .bike-card {
@@ -919,10 +946,11 @@
 .tracks__slider-buttons {
   gap: 20px;
   grid-area: buttons;
+  place-self: center start;
 }
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .tracks__slider-buttons {
-    justify-self: end;
+    place-self: center end;
   }
 }
 
@@ -990,7 +1018,7 @@
 }
 
 .training {
-  padding: 0 var(--gutter-side) var(--gutter-side);
+  padding: 90px var(--gutter-side) var(--gutter-side);
   box-sizing: border-box;
   position: relative;
   display: grid;
@@ -1197,6 +1225,10 @@
   top: 0;
   bottom: 0;
   margin: auto;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 2.15;
+  text-transform: lowercase;
   border: none;
   background-color: transparent;
   color: inherit;

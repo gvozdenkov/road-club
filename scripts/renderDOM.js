@@ -76,7 +76,7 @@ const generateTrackCardElement = (data) => {
 
   const cardImageElement = cardElement.querySelector(".track-card__image");
   cardImageElement.src = data.link;
-  cardImageElement.alt = `${data.title}.`;
+  cardImageElement.alt = `Тип трассы - ${data.title}.`;
 
   const cardLabelElement = cardElement.querySelector(".track-card__label");
   const labelLink = `${data.link.slice(1, -4)}-label.svg`;
@@ -142,7 +142,7 @@ const renderTrackTypeButtons = (tracks) => {
 // bike cards
 const generateBikeCardElement = (data) => {
   const cardElement = bikeCardTemplate
-    .querySelector(".bike-card")
+    .querySelector(".bikes-grid__item")
     .cloneNode(true);
 
   const cardImageElement = cardElement.querySelector(".image");

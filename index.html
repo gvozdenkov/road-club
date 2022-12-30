@@ -16,12 +16,30 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon/favicon-16x16.png"
+    />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link
+      rel="mask-icon"
+      href="/images/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
     <meta name="msapplication-TileColor" content="#ffc40d" />
     <meta name="theme-color" content="#ffffff" />
     <!-- page styles -->
@@ -44,9 +62,7 @@
           <nav>
             <ul class="link-list menu__link-list">
               <li>
-                <a class="menu__link" href="#tracks"
-                  >Покрытия и градиенты</a
-                >
+                <a class="menu__link" href="#tracks">Покрытия и градиенты</a>
               </li>
               <li>
                 <a class="menu__link" href="#bikes">Велосипеды</a>
@@ -165,9 +181,9 @@
             </div>
           </form>
 
-          <div class="bikes-grid bikes__bikes-grid">
+          <ul class="bikes-grid bikes__bikes-grid">
             <!-- Bike cards render here -->
-          </div>
+          </ul>
 
           <div class="slider-dots bikes__slider-dots">
             <span class="slider-dots__dot slider-dots__dot_active"></span>
@@ -256,16 +272,20 @@
 
     <!-- Bike card Template -->
     <template id="bike-card-template">
-      <article class="bike-card">
-        <div class="card bike-card__card">
-          <img
-            class="image"
-            src="./images/bike-type/highway/cannondale-systemsix-imod.jpg"
-            alt="Cannondale Systemsix Himod."
-          />
-        </div>
-        <p class="card__title bike-card__title">Cervelo Caledonia-5</p>
-      </article>
+      <li class="bikes-grid__item">
+        <a href="#" class="bike-card-link">
+          <article class="bike-card">
+            <div class="card bike-card__card">
+              <img
+                class="image"
+                src="./images/bike-type/highway/cannondale-systemsix-imod.jpg"
+                alt="Cannondale Systemsix Himod."
+              />
+            </div>
+            <p class="card__title bike-card__title">Cervelo Caledonia-5</p>
+          </article>
+        </a>
+      </li>
     </template>
 
     <!-- Bike card slider dots Template -->
@@ -283,12 +303,14 @@
           <img
             class="image track-card__image"
             src="./images/track-type/highway.jpg"
-            alt=""
+            alt="Тип трассы - Шоссе."
           />
           <img
             class="track-card__label"
             src="./images/track-type/highway-label.svg"
             alt=""
+            aria-hidden="true"
+            role="presentation"
           />
         </article>
       </li>

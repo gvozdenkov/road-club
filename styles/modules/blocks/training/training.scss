@@ -2,7 +2,7 @@
 @use "../../abstracts/mixins" as *;
 
 .training {
-  padding: 0 var(--gutter-side) var(--gutter-side);
+  padding: 90px var(--gutter-side) var(--gutter-side);
   box-sizing: border-box;
   position: relative;
 

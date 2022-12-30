@@ -4,6 +4,7 @@
 .bikes {
   padding: 0 var(--gutter-side) 0;
   position: relative;
+  overflow-x: hidden;
 
   display: grid;
   grid-template:

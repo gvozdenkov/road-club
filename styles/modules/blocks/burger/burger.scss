@@ -4,10 +4,7 @@
 
 .burger {
   display: none;
-  position: absolute;
   z-index: 9999;
-  right: var(--gutter-side);
-  top: 18px;
   width: 22px;
   aspect-ratio: 1;
   border: 0;

@@ -24,9 +24,9 @@
 @use "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_dark.scss";
 
 @use "./modules/blocks/section-link/section-link.scss";
-@use "./modules/blocks/section-link/_active/section-link_active.scss";
 @use "./modules/blocks/section-link/_type/section-link_type_muted.scss";
 @use "./modules/blocks/section-link/_type/section-link_type_bold.scss";
+@use "./modules/blocks/section-link/_active/section-link_active.scss";
 
 @use "./modules/blocks/card/card.scss";
 @use "./modules/blocks/card/__title/card__title.scss";
@@ -83,6 +83,7 @@
 
 @use "./modules/blocks/bikes-grid/bikes-grid.scss";
 
+@use "./modules/blocks/bike-card-link/bike-card-link.scss";
 @use "./modules/blocks/bike-card/bike-card.scss";
 @use "./modules/blocks/bike-card/__card/bike-card__card.scss";
 @use "./modules/blocks/bike-card/__title/bike-card__title.scss";
