@@ -150,6 +150,24 @@ const handleChangeTrackType = (evt) => {
   updatePage();
 };
 
+const handleBikeCardsScroll = (evt) => {
+  evt.preventDefault();
+  evt.stopPropagation();
+  console.log("scroll");
+  return false;
+};
+
+const handleBikeCardsTouchmove = (evt) => {
+  evt.preventDefault();
+  evt.stopPropagation();
+  console.log("touch");
+
+  bikeCardContainer.scrollBy({
+    left: 200,
+    behavior: "smooth",
+  });
+  return false;
+};
 // ======================== Listeners ================================
 sliderLeftButton.addEventListener("click", handleScrollLeft);
 
@@ -160,6 +178,14 @@ trackTypeButtons.forEach((trackButton) => {
 });
 
 trackTypeOptionsContainer.addEventListener("change", handleChangeTrackType);
+
+bikeCardContainer.addEventListener("scroll", handleBikeCardsScroll, {
+  passive: false,
+});
+
+// bikeCardContainer.addEventListener("touchmove", handleBikeCardsTouchmove, {
+//   passive: false,
+// });
 
 window.addEventListener("resize", throttle(getSlideWidth, 250));
 

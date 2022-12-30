@@ -846,17 +846,14 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-}
-@media (max-width: 768px) {
-  .bikes-grid {
-    grid-template-columns: 1fr;
-  }
 }
 @media (max-width: 576px) {
   .bikes-grid {
-    grid-template-columns: repeat(3, 100%);
+    grid-template-columns: 100%;
+    grid-auto-columns: 100%;
+    grid-auto-flow: column;
     overflow-x: scroll;
     -ms-scroll-snap-type: x mandatory;
         scroll-snap-type: x mandatory;
@@ -864,6 +861,13 @@
   .bikes-grid::-webkit-scrollbar {
     display: none;
   }
+}
+
+.bikes-grid__item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scroll-snap-stop: always;
 }
 
 .bike-card-link {
