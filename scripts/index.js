@@ -168,6 +168,30 @@ const handleBikeCardsTouchmove = (evt) => {
   });
   return false;
 };
+
+const bikeCards = document.querySelectorAll(".bikes-grid__item");
+
+callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      console.log(entry.target);
+      entry.target.classList.add("active");
+    } else {
+      entry.target.classList.remove("active");
+    }
+  });
+};
+
+const options = {
+  root: bikeCardContainer,
+  rootMargin: "100% 0% 100% 0%",
+};
+
+const observer = new IntersectionObserver(callback, options);
+
+bikeCards.forEach((card) => observer.observe(card));
+// observer.observe(bikeCards[0]);
 // ======================== Listeners ================================
 sliderLeftButton.addEventListener("click", handleScrollLeft);
 
@@ -179,9 +203,9 @@ trackTypeButtons.forEach((trackButton) => {
 
 trackTypeOptionsContainer.addEventListener("change", handleChangeTrackType);
 
-bikeCardContainer.addEventListener("scroll", handleBikeCardsScroll, {
-  passive: false,
-});
+// bikeCardContainer.addEventListener("scroll", handleBikeCardsScroll, {
+//   passive: false,
+// });
 
 // bikeCardContainer.addEventListener("touchmove", handleBikeCardsTouchmove, {
 //   passive: false,

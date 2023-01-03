@@ -142,11 +142,12 @@ const renderTrackTypeButtons = (tracks) => {
 };
 
 // bike cards
-const generateBikeCardElement = (data) => {
+const generateBikeCardElement = (data, index) => {
   const cardElement = bikeCardTemplate
     .querySelector(".bikes-grid__item")
     .cloneNode(true);
 
+  cardElement.setAttribute("data-index", index);
   const cardImageElement = cardElement.querySelector(".image");
   cardImageElement.src = data.link;
   cardImageElement.alt = `${data.name}.`;
@@ -156,8 +157,8 @@ const generateBikeCardElement = (data) => {
 };
 
 const renderBikeCards = (bikes) => {
-  bikes.forEach((bike) => {
-    renderElement(generateBikeCardElement(bike), bikeCardContainer);
+  bikes.forEach((bike, index) => {
+    renderElement(generateBikeCardElement(bike, index), bikeCardContainer);
   });
 };
 
