@@ -23,14 +23,13 @@
 
   @include width-sm {
     padding-top: 40px;
+    padding-bottom: 20px;
     grid-template:
       "title"
       "." 40px
       "links"
       "." 20px
       "bikes"
-      "." 20px
-      "dots"
       /1fr;
   }
 }

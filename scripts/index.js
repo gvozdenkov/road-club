@@ -169,29 +169,33 @@ const handleBikeCardsTouchmove = (evt) => {
   return false;
 };
 
-const bikeCards = document.querySelectorAll(".bikes-grid__item");
+const bikeCards = Array.from(document.querySelectorAll(".bikes-grid__item"));
+console.log(bikeCards);
+const bikeCardsDots = Array.from(
+  document.querySelectorAll(".slider-dots__dot")
+);
 
-callback = (entries, observer) => {
-  entries.forEach((entry) => {
-    console.log(entry);
-    if (entry.isIntersecting) {
-      console.log(entry.target);
-      entry.target.classList.add("active");
-    } else {
-      entry.target.classList.remove("active");
-    }
-  });
-};
-
-const options = {
+const observer = new IntersectionObserver(handleBikeCardObserved, {
   root: bikeCardContainer,
-  rootMargin: "100% 0% 100% 0%",
-};
-
-const observer = new IntersectionObserver(callback, options);
+  threshold: 0.6,
+});
 
 bikeCards.forEach((card) => observer.observe(card));
-// observer.observe(bikeCards[0]);
+
+function handleBikeCardObserved(entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const intersectingIndex = bikeCards.indexOf(entrie.target);
+      activateIndicator(intersectingIndex);
+    }
+  });
+}
+
+function activateIndicator(index) {
+  bikeCardsDots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+}
 // ======================== Listeners ================================
 sliderLeftButton.addEventListener("click", handleScrollLeft);
 

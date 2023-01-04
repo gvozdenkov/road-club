@@ -3,6 +3,8 @@
 
 .bikes-grid {
   @include reset-list;
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
@@ -11,7 +13,18 @@
     grid-template-columns: 100%;
     grid-auto-columns: 100%;
     grid-auto-flow: column;
+
     overflow-x: scroll;
+    /* prevent accidentally going back or triggering other swipe events */
+    overscroll-behavior: contain;
+    /* hide scroll bar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* momentum scroll on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* disbable vertical scroll for touch */
+    touch-action: pan-x;
+    /* scroll snapping */
     scroll-snap-type: x mandatory;
 
     &::-webkit-scrollbar {

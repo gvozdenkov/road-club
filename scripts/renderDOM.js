@@ -8,10 +8,14 @@ const trackTypeButtonTemplate = document.querySelector(
 const trackTypeOptionTemplate = document.querySelector(
   "#track-type-option-template"
 ).content;
+const bikeSliderDotTemplate = document.querySelector(
+  "#slider-dots-template"
+).content;
 
 const trackTypeButtonsContainer = document.querySelector(".track-type-buttons");
 const trackTypeOptionsContainer = document.querySelector(".track-type-options");
 const bikeCardContainer = document.querySelector(".bikes-grid");
+const bikeSliderDotsContainer = document.querySelector(".bikes__slider-dots");
 const leadBikeImage = document.querySelector(".lead__card-image");
 const leadBikeName = document.querySelector(".lead__bike-name");
 const trackTypeTitle = document.querySelector(".tracks__section-title");
@@ -162,13 +166,29 @@ const renderBikeCards = (bikes) => {
   });
 };
 
+// bike card slider dots
+const generateBikeCardDotElement = (index) => {
+  const dotElement = bikeSliderDotTemplate
+    .querySelector(".slider-dots__dot")
+    .cloneNode(true);
+
+  dotElement.setAttribute("data-index", index);
+  return dotElement;
+};
+
+const renderBikeSliderDots = (bikes) => {
+  bikes.forEach((_, index) => {
+    renderElement(generateBikeCardDotElement(index), bikeSliderDotsContainer);
+  });
+};
+
 const initTrackType = () => {
   const trackType = getTrackType();
   !trackType ? setTrackType(tracks[0].type) : null;
 };
 
 // ================================ render Page
-const renderPage = () => {
+function renderPage() {
   initTrackType();
   const trackType = getTrackType();
 
@@ -179,6 +199,7 @@ const renderPage = () => {
   renderTrackCards(tracks);
   renderTrackTypeButtons(tracks);
   renderBikeCards(bikes);
-};
+  renderBikeSliderDots(bikes);
+}
 
 renderPage();
