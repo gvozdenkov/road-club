@@ -2,10 +2,11 @@ const trackTypeButtons = document.querySelectorAll(".track-type-btn");
 const sliderLeftButton = document.querySelector(".slider-button_type_prev");
 const sliderRightButton = document.querySelector(".slider-button_type_next");
 
+updatePage();
 // ====================== update page functions ========================
-const clearBikesCards = () => {
+function clearBikesCards() {
   bikeCardContainer.textContent = "";
-};
+}
 
 function unsetCurrentActiveButton() {
   trackTypeButtons.forEach((trackButton) => {
@@ -23,11 +24,11 @@ function setActiveTrackButton(trackType) {
   });
 }
 
-const setTrackTypeActiveOption = (trackType) => {
+function setTrackTypeActiveOption(trackType) {
   trackTypeOptionsContainer.value = trackType;
-};
+}
 
-const showTrackLabel = (trackType) => {
+function showTrackLabel(trackType) {
   const activeTrackCard = Array.from(
     document.querySelectorAll(`[data-track='${trackType}']`)
   );
@@ -36,33 +37,33 @@ const showTrackLabel = (trackType) => {
     const trackLabel = card.querySelector(".track-card__label");
     trackLabel.classList.add("track-card__label_visible");
   });
-};
+}
 
-const clearTrackLabels = () => {
+function clearTrackLabels() {
   const trackLabels = Array.from(
     document.querySelectorAll(".track-card__label")
   );
   trackLabels.forEach((label) =>
     label.classList.remove("track-card__label_visible")
   );
-};
+}
 // ====================== Slider =======================================
-const getSlideWidth = () => {
+function getSlideWidth() {
   const firstSlide = tracksContainer.querySelector(".track-card");
   const firstSlideWidth = firstSlide.offsetWidth;
   const gap = parseInt(window.getComputedStyle(tracksContainer).gap);
 
   return firstSlideWidth + gap;
-};
+}
 
-const scrollSlider = (scrollPos) => {
+function scrollSlider(scrollPos) {
   tracksContainer.scrollBy({
     left: scrollPos,
     behavior: "smooth",
   });
-};
+}
 
-const scrollSliderTo = (trackType) => {
+function scrollSliderTo(trackType) {
   const currIndex = tracks.findIndex((track) => track.type === trackType);
   const scrollPos = getSlideWidth() * (currIndex + 1);
 
@@ -70,32 +71,32 @@ const scrollSliderTo = (trackType) => {
     left: scrollPos,
     behavior: "smooth",
   });
-};
+}
 
-const rewindSliderTo = (pos) => {
+function rewindSliderTo(pos) {
   tracksContainer.scrollTo(pos, 0);
-};
+}
 
-const getNextTrackType = () => {
+function getNextTrackType() {
   const currTrackType = getTrackType();
   const currIndex = tracks.findIndex((track) => track.type === currTrackType);
 
   currIndex === tracks.length - 1
     ? setTrackType(tracks[0].type)
     : setTrackType(tracks[currIndex + 1].type);
-};
+}
 
-const getPrevTrackType = () => {
+function getPrevTrackType() {
   const currTrackType = getTrackType();
   const currIndex = tracks.findIndex((track) => track.type === currTrackType);
 
   currIndex === 0
     ? setTrackType(tracks[tracks.length - 1].type)
     : setTrackType(tracks[currIndex - 1].type);
-};
+}
 
 // =============================================================
-const updatePage = () => {
+function updatePage() {
   const trackType = getTrackType();
   const bikes = filterBikesByType(trackType);
   const selectedTrack = filterTrackByType(trackType);
@@ -113,7 +114,8 @@ const updatePage = () => {
 
   clearBikesCards();
   renderBikeCards(bikes);
-};
+  setGalleryObserver();
+}
 
 // ====================== event handlers ==============================
 const slideCount = tracks.length;
@@ -150,50 +152,35 @@ const handleChangeTrackType = (evt) => {
   updatePage();
 };
 
-const handleBikeCardsScroll = (evt) => {
-  evt.preventDefault();
-  evt.stopPropagation();
-  console.log("scroll");
-  return false;
-};
+function setGalleryObserver() {
+  const bikeCards = Array.from(document.querySelectorAll(".bikes-grid__item"));
 
-const handleBikeCardsTouchmove = (evt) => {
-  evt.preventDefault();
-  evt.stopPropagation();
-  console.log("touch");
-
-  bikeCardContainer.scrollBy({
-    left: 200,
-    behavior: "smooth",
+  const observer = new IntersectionObserver(handleBikeCardObserved, {
+    root: bikeCardContainer,
+    threshold: 0.6,
   });
-  return false;
-};
 
-const bikeCards = Array.from(document.querySelectorAll(".bikes-grid__item"));
-console.log(bikeCards);
-const bikeCardsDots = Array.from(
-  document.querySelectorAll(".slider-dots__dot")
-);
-
-const observer = new IntersectionObserver(handleBikeCardObserved, {
-  root: bikeCardContainer,
-  threshold: 0.6,
-});
-
-bikeCards.forEach((card) => observer.observe(card));
+  bikeCards.forEach((card) => observer.observe(card));
+}
 
 function handleBikeCardObserved(entries) {
+  const bikeCards = Array.from(document.querySelectorAll(".bikes-grid__item"));
+
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      const intersectingIndex = bikeCards.indexOf(entrie.target);
+      const intersectingIndex = bikeCards.indexOf(entry.target);
       activateIndicator(intersectingIndex);
     }
   });
 }
 
 function activateIndicator(index) {
+  const bikeCardsDots = Array.from(
+    document.querySelectorAll(".slider-dots__dot")
+  );
+
   bikeCardsDots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
+    dot.classList.toggle("slider-dots__dot_active", i === index);
   });
 }
 // ======================== Listeners ================================
@@ -207,16 +194,7 @@ trackTypeButtons.forEach((trackButton) => {
 
 trackTypeOptionsContainer.addEventListener("change", handleChangeTrackType);
 
-// bikeCardContainer.addEventListener("scroll", handleBikeCardsScroll, {
-//   passive: false,
-// });
-
-// bikeCardContainer.addEventListener("touchmove", handleBikeCardsTouchmove, {
-//   passive: false,
-// });
-
 window.addEventListener("resize", throttle(getSlideWidth, 250));
 
 // ==============================================================
 scrollSliderTo(getTrackType());
-updatePage();
