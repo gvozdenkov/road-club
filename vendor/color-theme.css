@@ -1,0 +1,70 @@
+:root {
+  --color-background-primary: #f4f4f4;
+  --color-background-secondary: #efefef;
+  --color-background-card: white;
+  --color-background-slider-button: #ebebeb;
+  --color-background-slider-button-hover: #ebebeb60;
+  --color-background-theme-button: #fff;
+
+  --color-content-primary: #151515;
+  --color-content-primary-inverted: #fff;
+  --color-content-secondary: rgba(34, 34, 34, 0.7);
+  --color-content-muted: #cfcfcf;
+
+  --color-accent-primary: #24b47e;
+  --color-button-hover: #319e75;
+  --color-button-text: #fff;
+
+  --color-link-hover: rgba(21, 21, 21, 0.75);
+  --color-link-active: #22222260;
+
+  --color-landing-link: #151515;
+  --color-landing-link-hover: rgba(21, 21, 21, 0.75);
+  --color-landing-link-active: rgba(21, 21, 21, 0.75);
+  --color-landing-link-muted: rgba(34, 34, 34, 0.7);
+  --color-landing-link-muted-hover: rgba(34, 34, 34, 0.6);
+
+  --color-slider-dot: #cacaca;
+  --color-slider-dot-active: #151515;
+
+  --color-section-divider: #e3e3e3;
+
+  --color-form-input-border: #c7c7c750;
+  --color-form-input-border-focus: #c7c7c7;
+  --color-form-custom-select: #e3e3e3;
+}
+
+.dark {
+  --color-background-primary: #333333;
+  --color-background-secondary: #2f2f2f;
+  --color-background-card: white;
+  --color-background-slider-button: #434343;
+  --color-background-slider-button-hover: #43434360;
+  --color-background-theme-button: #545454;
+
+  --color-content-primary: #fff;
+  --color-content-primary-inverted: #151515;
+  --color-content-secondary: #e6e6e670;
+  --color-content-muted: #676767;
+
+  --color-accent-primary: #24b47e;
+  --color-button-hover: #319e75;
+  --color-button-text: #fff;
+
+  --color-link-hover: #ffffff65;
+  --color-link-active: #e5e5e550;
+
+  --color-landing-link: #f4f4f4;
+  --color-landing-link-hover: rgba(244, 244, 244, 0.75);
+  --color-landing-link-active: #fff;
+  --color-landing-link-muted: #e5e5e5;
+  --color-landing-link-muted-hover: rgba(229 229 229 / 0.6);
+
+  --color-slider-dot: #e6e6e670;
+  --color-slider-dot-active: #fff;
+
+  --color-section-divider: #e3e3e3;
+
+  --color-form-input-border: #7d7d7d50;
+  --color-form-custom-select: rgba(125, 125, 125, 0.5);
+}

@@ -1,0 +1,8 @@
+@use "../../../abstracts/mixins" as *;
+
+.bike-card__card {
+  @include width-md {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+  }
+}

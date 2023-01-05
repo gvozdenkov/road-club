@@ -1,0 +1,9 @@
+@use "../../../abstracts/mixins" as *;
+
+.form__option {
+  color: var(--color-content-primary);
+
+  @include width-sm {
+    color: var(--color-content-primary-inverted);
+  }
+}

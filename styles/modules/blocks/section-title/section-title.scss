@@ -1,0 +1,14 @@
+@use "../../abstracts/mixins" as *;
+
+.section-title {
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 1.09;
+  letter-spacing: -0.5px;
+  margin: 0;
+
+  @include width-md {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+}

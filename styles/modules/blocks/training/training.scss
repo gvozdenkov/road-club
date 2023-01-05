@@ -1,0 +1,35 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.training {
+  padding: 90px var(--gutter-side) var(--gutter-side);
+  box-sizing: border-box;
+  position: relative;
+
+  display: grid;
+  grid-template:
+    "title . image"
+    ". . image" 50px
+    "desc . image"
+    ". . image" auto
+    "links . image"
+    / 460fr 160fr 580fr;
+
+  @include width-lg {
+    padding-bottom: 80px;
+    grid-template:
+      "title"
+      "." 40px
+      "image"
+      "." 40px
+      "desc"
+      "." 40px
+      "links"
+      / 1fr;
+  }
+
+  @include width-sm {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}

@@ -1,0 +1,17 @@
+@use "../../../abstracts/variables" as *;
+@use "../../../abstracts/mixins" as *;
+
+.footer__copyright {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--color-content-muted);
+  grid-area: copy;
+  align-self: end;
+  transition: $switch-theme-trans;
+
+  @include width-md {
+    align-self: center;
+  }
+}

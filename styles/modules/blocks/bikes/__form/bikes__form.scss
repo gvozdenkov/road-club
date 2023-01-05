@@ -1,0 +1,10 @@
+@use "../../../abstracts/mixins" as *;
+
+.bikes__form {
+  grid-area: links;
+  display: none;
+
+  @include width-sm {
+    display: block;
+  }
+}

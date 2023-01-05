@@ -1,0 +1,10 @@
+@use "../../../abstracts/mixins" as *;
+
+.lead__button {
+  grid-area: button;
+  max-width: 180px;
+
+  @include width-sm {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,43 @@
+@use "./breakpoints" as *;
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin width-xxl {
+  @media (max-width: $xxl) {
+    @content;
+  }
+}
+
+@mixin width-xl {
+  @media (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin width-lg {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin width-md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin width-sm {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin width-xs {
+  @media (max-width: $xs) {
+    @content;
+  }
+}

@@ -1,0 +1,11 @@
+.subscribe-form__submit {
+  opacity: 0;
+}
+
+.subscribe-form__submit:focus {
+  opacity: 1;
+}
+
+.form__input-with-btn:focus + .subscribe-form__submit {
+  opacity: 1;
+}

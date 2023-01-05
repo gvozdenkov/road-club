@@ -1,0 +1,6 @@
+@use "../../abstracts/variables" as *;
+
+.form {
+  color: var(--color-content-primary);
+  transition: $switch-theme-trans;
+}

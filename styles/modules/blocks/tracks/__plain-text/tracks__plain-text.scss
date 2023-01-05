@@ -1,0 +1,10 @@
+@use "../../../abstracts/mixins" as *;
+
+.tracks__plain-text {
+  max-width: 460px;
+  grid-area: text;
+
+  @include width-md {
+    max-width: 100%;
+  }
+}

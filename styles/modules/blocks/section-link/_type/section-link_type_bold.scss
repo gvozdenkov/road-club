@@ -1,0 +1,11 @@
+@use "../../../abstracts/variables" as *;
+@use "../../../abstracts/mixins" as *;
+
+.section-link_type_bold {
+  font-weight: 600;
+
+  @include width-md {
+    font-size: 14px;
+    line-height: 1.43;
+  }
+}

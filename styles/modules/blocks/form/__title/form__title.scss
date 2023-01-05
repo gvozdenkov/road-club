@@ -1,0 +1,13 @@
+@use "../../../abstracts/mixins" as *;
+
+.form__title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+  margin-bottom: 50px;
+
+  @include width-md {
+    margin-bottom: 40px;
+  }
+}

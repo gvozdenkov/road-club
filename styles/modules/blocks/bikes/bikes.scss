@@ -1,0 +1,35 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.bikes {
+  padding: 0 var(--gutter-side) 0;
+  position: relative;
+  overflow-x: hidden;
+
+  display: grid;
+  grid-template:
+    "title . links"
+    ". . ." 120px
+    "bikes bikes bikes"
+    /1fr 1fr 1fr;
+
+  @include width-md {
+    grid-template:
+      "title . links"
+      ". . ." 40px
+      "bikes bikes bikes"
+      /1fr 1fr 1fr;
+  }
+
+  @include width-sm {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    grid-template:
+      "title"
+      "." 40px
+      "links"
+      "." 20px
+      "bikes"
+      /1fr;
+  }
+}

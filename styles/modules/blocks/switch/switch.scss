@@ -1,0 +1,8 @@
+@use "../../abstracts/variables.scss" as *;
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: $switch-width;
+  height: $switch-height;
+}

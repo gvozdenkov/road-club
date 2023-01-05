@@ -1,0 +1,9 @@
+.section-link_active {
+  font-weight: 600;
+  color: var(--color-landing-link-active);
+
+  &:hover,
+  &:focus {
+    color: var(--color-landing-link-active);
+  }
+}

@@ -1,0 +1,17 @@
+@use "../../../abstracts/mixins.scss" as *;
+
+.menu__link-list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  gap: 34px;
+}
+
+@include width-md {
+  .menu__link-list {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+  }
+}

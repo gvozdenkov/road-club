@@ -1,0 +1,11 @@
+@use "../../../abstracts/mixins" as *;
+
+.lead__heading-image {
+  grid-area: image;
+  height: 100%;
+
+  @include width-md {
+    width: calc(100% - 48px + var(--gutter-side));
+    justify-self: end;
+  }
+}

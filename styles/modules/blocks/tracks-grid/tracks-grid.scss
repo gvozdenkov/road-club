@@ -1,0 +1,29 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.tracks-grid {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(650px, 50%);
+  align-items: stretch;
+  gap: var(--slider-gap);
+  position: relative;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+
+  @include width-md {
+    grid-auto-columns: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tracks-grid__item {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

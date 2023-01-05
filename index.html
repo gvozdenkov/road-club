@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="html" lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,7 +7,7 @@
     <meta name="author" content="Arty Gvozdenkov" />
     <meta
       name="description"
-      content="Триатлонные старты, горные серпантины или грейвел заезды по живописным маршрутам – нужно только определиться с выбором велосипеда и отправиться в путь."
+      content="Триатлонные старты, горные серпантины или грейвел заезды по живописным маршрутам &ndash; нужно только определиться с выбором велосипеда и отправиться в путь."
     />
     <meta
       name="keywords"
@@ -16,17 +16,324 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon/favicon-16x16.png"
+    />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link
+      rel="mask-icon"
+      href="/images/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
     <meta name="msapplication-TileColor" content="#ffc40d" />
     <meta name="theme-color" content="#ffffff" />
     <!-- page styles -->
     <link rel="stylesheet" href="./styles/index.css" />
     <title>Road Club</title>
   </head>
-  <body></body>
+  <body class="page">
+    <div class="page__content">
+      <header class="header">
+        <button
+          class="burger"
+          type="button"
+          aria-controls="menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Меню</span>
+        </button>
+
+        <div class="menu" id="menu" data-visible="false">
+          <nav>
+            <ul class="link-list menu__link-list">
+              <li>
+                <a class="menu__link" href="#tracks">Покрытия и градиенты</a>
+              </li>
+              <li>
+                <a class="menu__link" href="#bikes">Велосипеды</a>
+              </li>
+              <li>
+                <a class="menu__link" href="#trainings">Тренировки</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="color-theme menu__color-theme">
+            <div class="color-theme__icon color-theme__icon_type_light"></div>
+            <label class="switch">
+              <input class="switch__input" type="checkbox" />
+              <span class="switch__slider"></span>
+            </label>
+            <div class="color-theme__icon color-theme__icon_type_dark"></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="lead">
+          <h1 class="section-title lead__section-title">Шоссе, ТТ и Грэвел</h1>
+          <p class="plain-text plain-text_muted lead__plain-text">
+            Триатлонные старты, горные серпантины или грейвел заезды по
+            живописным маршрутам – нужно только определиться с выбором
+            велосипеда и отправиться в путь.
+          </p>
+          <button class="button lead__button">Подробнее</button>
+          <p class="plain-text lead__bike-name">Cannondale Systemsix</p>
+          <img
+            class="image lead__heading-image"
+            src="./images/header-cover.jpg"
+            alt="Лесная трасса с высоты."
+          />
+          <div class="lead__card-wrap">
+            <div class="card lead__card">
+              <img
+                class="image lead__card-image"
+                src="./images/bike-type/highway/cannondale-systemsix-imod.jpg"
+                alt="Cannondale Systemsix Himod."
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="testimony section-divider">
+          <img
+            class="image testimony__image"
+            src="./images/lead.jpg"
+            alt="Трасса в горах."
+          />
+          <figure class="testimony__figure">
+            <blockquote class="testimony__quote">
+              <p class="testimony__quote-text">
+                «Катайся много или мало, долго или коротко, как хочешь - но
+                катайся»
+              </p>
+            </blockquote>
+            <figcaption class="testimony__author">
+              <p class="testimony__author-name">Эдди Меркс</p>
+              <p class="plain-text plain-text_muted testimony__author-job">
+                Велогонщик
+              </p>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="tracks section-divider" id="tracks">
+          <h2 class="section-title tracks__section-title">Шоссе</h2>
+          <p class="plain-text plain-text_muted tracks__plain-text">
+            На шоссейном велосипеде можно ездить по асфальту на разных
+            градиентах: будь то горы или равнины. Гонки проходят в командном
+            пелотоне, но тренироваться можно и самостоятельно.
+          </p>
+
+          <ul class="tracks-grid tracks__tracks-grid">
+            <!-- render Track cards here -->
+          </ul>
+
+          <ul class="link-list tracks__slider-buttons">
+            <li>
+              <button
+                class="slider-button slider-button_type_prev"
+                type="button"
+                aria-label="Предыдущий слайд"
+              ></button>
+            </li>
+            <li>
+              <button
+                class="slider-button slider-button_type_next"
+                type="button"
+                aria-label="Следующий слайд"
+              ></button>
+            </li>
+          </ul>
+        </section>
+
+        <section class="bikes section-divider" id="bikes">
+          <h2 class="section-title bikes__section-title">Велосипеды</h2>
+
+          <ul class="link-list bikes__link-list track-type-buttons">
+            <!-- Track type buttons here -->
+          </ul>
+
+          <form action="/" class="form bikes__form" name="track-type-form">
+            <label class="sr-only" for="track-type">Выбор велосипеда:</label>
+            <div class="form__custom-select form__custom-select_place_bikes">
+              <select
+                class="form__select-reset track-type-options"
+                id="track-type"
+                name="track-type"
+              >
+                <!-- Bike type option here -->
+              </select>
+            </div>
+          </form>
+
+          <div class="gallery-wrapper bikes__bikes-grid bikes-slider-container">
+            <ul class="bikes-grid">
+              <!-- Bike cards render here -->
+            </ul>
+            <div class="slider-dots bikes__slider-dots">
+              <!-- Slider dots render here -->
+            </div>
+          </div>
+        </section>
+
+        <section class="training section-divider" id="trainings">
+          <img
+            class="image training__image"
+            src="./images/workout.jpg"
+            alt="Поворот дороги в лесу."
+          />
+          <h2 class="section-title training__title">Тренировки</h2>
+          <p class="plain-text training__desc">
+            Чтобы найти маршрут для тренировки можно воспользоваться сервисом
+            Komoot, а записать эти тренировки поможет приложение Strava, а также
+            это приложение позволит построить тренировочный план.
+          </p>
+          <ul class="link-list training__link-list">
+            <li>
+              <a
+                class="section-link section-link_type_bold"
+                href="https://www.strava.com"
+                target="_blank"
+                >Strava</a
+              >
+            </li>
+            <li>
+              <a
+                class="section-link section-link_type_bold"
+                href="https://www.komoot.com"
+                target="_blank"
+                >Komoot</a
+              >
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <form
+          action="/"
+          class="form footer__form subscribe-form"
+          name="subscribe-form"
+        >
+          <h2 class="form__title footer__form-title">
+            Подпишитесь на рассылку —
+          </h2>
+          <label for="email" class="form__label sr-only"
+            >Введите электронную почту</label
+          >
+          <div class="form__input-wrap">
+            <input
+              class="form__input form__input-with-btn"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Ваш e-mail"
+              required
+            />
+            <button
+              class="form__input-btn subscribe-form__submit"
+              type="submit"
+            >
+              Ok
+            </button>
+          </div>
+        </form>
+
+        <p class="footer__copyright">&copy; Road Club 2021</p>
+
+        <div class="color-theme footer__color-theme">
+          <div class="color-theme__icon color-theme__icon_type_light"></div>
+          <label class="switch">
+            <input class="switch__input" type="checkbox" />
+            <span class="switch__slider"></span>
+          </label>
+          <div class="color-theme__icon color-theme__icon_type_dark"></div>
+        </div>
+
+        <div class="image logo footer__logo"></div>
+      </footer>
+    </div>
+
+    <!-- Bike card Template -->
+    <template id="bike-card-template">
+      <li class="bikes-grid__item">
+        <a href="#" class="bike-card-link">
+          <article class="bike-card">
+            <div class="card bike-card__card">
+              <img
+                class="image"
+                src="./images/bike-type/highway/cannondale-systemsix-imod.jpg"
+                alt="Cannondale Systemsix Himod."
+              />
+            </div>
+            <p class="card__title bike-card__title">Cervelo Caledonia-5</p>
+          </article>
+        </a>
+      </li>
+    </template>
+
+    <!-- Bike card slider dots Template -->
+    <template id="slider-dots-template">
+      <span class="slider-dots__dot"></span>
+    </template>
+
+    <!-- Track card Template -->
+    <template id="track-card-template">
+      <li class="tracks-grid__item">
+        <article class="track-card tracks-grid__track-card">
+          <img
+            class="image track-card__image"
+            src="./images/track-type/highway.jpg"
+            alt="Тип трассы - Шоссе."
+          />
+          <img
+            class="track-card__label"
+            src="./images/track-type/highway-label.svg"
+            alt=""
+            aria-hidden="true"
+            role="presentation"
+          />
+        </article>
+      </li>
+    </template>
+
+    <!-- Bike type button Template -->
+    <template id="track-type-button-template">
+      <li class="track-button">
+        <button
+          class="section-link section-link_type_muted track-type-btn"
+          value="highway"
+        >
+          Шоссе
+        </button>
+      </li>
+    </template>
+
+    <!-- Bike type select item Template -->
+    <template id="track-type-option-template">
+      <option class="form__option" value="highway">Шоссе</option>
+    </template>
+
+    <script src="./scripts/theme.js"></script>
+    <script src="./scripts/burger.js"></script>
+    <script src="./scripts/data.js"></script>
+    <script src="./scripts/renderDOM.js"></script>
+    <script src="./scripts/form.js"></script>
+    <script src="./scripts/index.js"></script>
+  </body>
 </html>

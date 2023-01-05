@@ -1,0 +1,9 @@
+@use "../../abstracts/variables.scss" as *;
+
+.page {
+  font-family: $font-family;
+  color: var(--color-content-primary);
+  background-color: var(--color-background-primary);
+
+  transition: $switch-theme-trans;
+}

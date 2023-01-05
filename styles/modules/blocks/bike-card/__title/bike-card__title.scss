@@ -1,0 +1,12 @@
+@use "../../../abstracts/mixins" as *;
+
+.bike-card__title {
+  @include width-md {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    align-self: end;
+    z-index: 2;
+    margin-bottom: 16px;
+    color: var(--color-content-primary-inverted);
+  }
+}

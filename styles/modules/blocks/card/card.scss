@@ -1,0 +1,23 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.card {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-background-card);
+  padding: 20px;
+  border-radius: $card-border-radius;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $card-box-shadow;
+  transition: box-shadow 0.15s ease-out;
+
+  &:hover {
+    box-shadow: $card-box-shadow-hover;
+  }
+}

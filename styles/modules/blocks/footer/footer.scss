@@ -1,0 +1,25 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.footer {
+  background-color: var(--color-background-secondary);
+  padding: 80px var(--gutter-side) 60px;
+
+  display: grid;
+  grid-template:
+    "form . ."
+    ". . ." 100px
+    "copy . theme"
+    / max-content auto min-content;
+
+  @include width-md {
+    padding: 60px var(--gutter-side) 16px;
+    grid-template:
+      "form form"
+      ". ." 90px
+      "copy logo"
+      / 1fr 1fr;
+  }
+
+  transition: $switch-theme-trans;
+}

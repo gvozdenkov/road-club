@@ -1,0 +1,13 @@
+@use "../../../abstracts/mixins" as *;
+
+.testimony__figure {
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 50px;
+  grid-area: desc;
+
+  @include width-sm {
+    gap: 40px;
+  }
+}

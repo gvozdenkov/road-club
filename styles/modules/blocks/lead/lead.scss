@@ -1,0 +1,49 @@
+@use "../../abstracts/mixins" as *;
+
+.lead {
+  width: 100%;
+  padding: 20px 0 0 var(--gutter-side);
+  box-sizing: border-box;
+  position: relative;
+
+  display: grid;
+  grid-template:
+    "title . image"
+    ". . image" 50px
+    "desc . image"
+    ". . image" 50px
+    "button . image"
+    ". . image" 167px
+    "bike-name . image"
+    ". . image" auto
+    / 460fr 250fr 610fr;
+
+  @include width-xxl {
+    grid-template-columns: 460fr 100fr 610fr;
+  }
+
+  @include width-md {
+    padding: 40px var(--gutter-side) 0;
+    grid-template:
+      "title"
+      "." 40px
+      "image" minmax(348px, 450px)
+      "." 40px
+      "desc"
+      "." 40px
+      "button "
+      / 1fr;
+  }
+
+  @include width-xs {
+    grid-template:
+      "title"
+      "." 40px
+      "image"
+      "." 40px
+      "desc"
+      "." 40px
+      "button "
+      / 1fr;
+  }
+}

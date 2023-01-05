@@ -1,0 +1,9 @@
+@use "../../../abstracts/mixins" as *;
+
+.bikes__slider-dots {
+  display: none;
+
+  @include width-sm {
+    display: flex;
+  }
+}

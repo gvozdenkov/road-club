@@ -1,3 +1,137 @@
+@use "./modules/blocks/html/html.scss";
+
+@use "./modules/blocks/page/page.scss";
+@use "./modules/blocks/page/__content/page__content.scss";
+
+@use "./modules/blocks/sr-only/sr-only.scss";
+
+@use "./modules/blocks/link-list/link-list.scss";
+
+@use "./modules/blocks/section-title/section-title.scss";
+
+@use "./modules/blocks/plain-text/plain-text.scss";
+@use "./modules/blocks/plain-text/_muted/plain-text_muted.scss";
+
+@use "./modules/blocks/image/image.scss";
+
+@use "./modules/blocks/logo/logo.scss";
+
+@use "./modules/blocks/button/button.scss";
+
+@use "./modules/blocks/color-theme/color-theme.scss";
+@use "./modules/blocks/color-theme/__icon/color-theme__icon.scss";
+@use "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_light.scss";
+@use "./modules/blocks/color-theme/__icon/_type/color-theme__icon_type_dark.scss";
+
+@use "./modules/blocks/section-link/section-link.scss";
+@use "./modules/blocks/section-link/_type/section-link_type_muted.scss";
+@use "./modules/blocks/section-link/_type/section-link_type_bold.scss";
+@use "./modules/blocks/section-link/_active/section-link_active.scss";
+
+@use "./modules/blocks/card/card.scss";
+@use "./modules/blocks/card/__title/card__title.scss";
+
+@use "./modules/blocks/section-divider/section-divider.scss";
+
+@use "./modules/blocks/header/header.scss";
+
+@use "./modules/blocks/burger/burger.scss";
+
+@use "./modules/blocks/menu/menu.scss";
+@use "./modules/blocks/menu/__color-theme/menu__color-theme.scss";
+
+@use "./modules/blocks/menu/__link-list/menu__link-list.scss";
+@use "./modules/blocks/menu/__link/menu__link.scss";
+
+@use "./modules/blocks/switch/switch.scss";
+@use "./modules/blocks/switch/__input/switch__input.scss";
+@use "./modules/blocks/switch/__slider/switch__slider.scss";
+
+@use "./modules/blocks/slider-button/slider-button.scss";
+@use "./modules/blocks/slider-button/_type/slider-button_type_next.scss";
+@use "./modules/blocks/slider-dots/slider-dots.scss";
+@use "./modules/blocks/slider-dots/__dot/slider-dots__dot.scss";
+@use "./modules/blocks/slider-dots/__dot/_active/slider-dots__dot_active.scss";
+
+@use "./modules/blocks/content/content.scss";
+
+@use "./modules/blocks/lead/lead.scss";
+@use "./modules/blocks/lead/__section-title/lead__section-title.scss";
+@use "./modules/blocks/lead/__plain-text/lead__plain-text.scss";
+@use "./modules/blocks/lead/__button/lead__button.scss";
+@use "./modules/blocks/lead/__bike-name/lead__bike-name.scss";
+@use "./modules/blocks/lead/__heading-image/lead__heading-image.scss";
+@use "./modules/blocks/lead/__card-wrap/lead__card-wrap.scss";
+@use "./modules/blocks/lead/__card/lead__card.scss";
+@use "./modules/blocks/lead/__card-image/lead__card-image.scss";
+
+@use "./modules/blocks/testimony/testimony.scss";
+@use "./modules/blocks/testimony/__image/testimony__image.scss";
+@use "./modules/blocks/testimony/__figure/testimony__figure.scss";
+@use "./modules/blocks/testimony/__quote/testimony__quote.scss";
+@use "./modules/blocks/testimony/__quote-text/testimony__quote-text.scss";
+@use "./modules/blocks/testimony/__author/testimony__author.scss";
+@use "./modules/blocks/testimony/__author-name/testimony__author-name.scss";
+@use "./modules/blocks/testimony/__author-job/testimony__author-job.scss";
+
+@use "./modules/blocks/gallery-wrapper/gallery-wrapper.scss";
+
+@use "./modules/blocks/bikes/bikes.scss";
+@use "./modules/blocks/bikes/__section-title/bikes__section-title.scss";
+@use "./modules/blocks/bikes/__link-list/bikes__link-list.scss";
+@use "./modules/blocks/bikes/__bikes-grid/bikes__bikes-grid.scss";
+@use "./modules/blocks/bikes/__slider-dots/bikes__slider-dots.scss";
+@use "./modules/blocks/bikes/__form/bikes__form.scss";
+
+@use "./modules/blocks/bikes-grid/bikes-grid.scss";
+@use "./modules/blocks/bikes-grid/__item/bikes-grid__item.scss";
+
+@use "./modules/blocks/bike-card-link/bike-card-link.scss";
+@use "./modules/blocks/bike-card/bike-card.scss";
+@use "./modules/blocks/bike-card/__card/bike-card__card.scss";
+@use "./modules/blocks/bike-card/__title/bike-card__title.scss";
+
+@use "./modules/blocks/tracks/tracks.scss";
+@use "./modules/blocks/tracks/__section-title/tracks__section-title.scss";
+@use "./modules/blocks/tracks/__plain-text/tracks__plain-text.scss";
+@use "./modules/blocks/tracks/__tracks-grid/tracks__tracks-grid.scss";
+@use "./modules/blocks/tracks/__slider-buttons/tracks__slider-buttons.scss";
+
+@use "./modules/blocks/tracks-grid/tracks-grid.scss";
+@use "./modules/blocks/tracks-grid/__track-card/tracks-grid__track-card.scss";
+
+@use "./modules/blocks/track-card/track-card.scss";
+@use "./modules/blocks/track-card/__image/track-card__image.scss";
+@use "./modules/blocks/track-card/__label/track-card__label.scss";
+@use "./modules/blocks/track-card/__label/_visible/track-card__label_visible.scss";
+
+@use "./modules/blocks/training/training.scss";
+@use "./modules/blocks/training/__image/training__image.scss";
+@use "./modules/blocks/training/__title/training__title.scss";
+@use "./modules/blocks/training/__desc/training__desc.scss";
+@use "./modules/blocks/training/__link-list/training__link-list.scss";
+
+@use "./modules/blocks/footer/footer.scss";
+@use "./modules/blocks/footer/__form/footer__form.scss";
+@use "./modules/blocks/footer/__form-title/footer__form-title.scss";
+@use "./modules/blocks/footer/__copyright/footer__copyright.scss";
+@use "./modules/blocks/footer/__color-theme/footer__color-theme.scss";
+@use "./modules/blocks/footer/__logo/footer__logo.scss";
+
+@use "./modules/blocks/form/form.scss";
+@use "./modules/blocks/form/__title/form__title.scss";
+@use "./modules/blocks/form/__input-wrap/form__input-wrap.scss";
+@use "./modules/blocks/form/__input/form__input.scss";
+@use "./modules/blocks/form/__input-with-btn/form__input-with-btn.scss";
+@use "./modules/blocks/form/__input-btn/form__input-btn.scss";
+@use "./modules/blocks/form/__select-reset/form__select-reset.scss";
+@use "./modules/blocks/form/__custon-select/form__custom-select.scss";
+@use "./modules/blocks/form/__custon-select/_place/form__custom-select_place_bikes.scss";
+@use "./modules/blocks/form/__option/form__option.scss";
+
+@use "./modules/blocks/subscribe-form/subscribe-form.scss";
+@use "./modules/blocks/subscribe-form/__submit/subscribe-form__submit.scss";
+
 @import "../vendor/normalize.css";
 @import "../vendor/fonts.css";
-@import "../vendor/variables.css";
+@import "../vendor/color-theme.css";

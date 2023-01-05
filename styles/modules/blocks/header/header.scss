@@ -1,0 +1,20 @@
+@use "../../abstracts/variables.scss" as *;
+@use "../../abstracts/mixins.scss" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: inherit;
+  padding: 28px var(--gutter-side);
+  height: $menu-height;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include width-md {
+    padding: 0 18px;
+  }
+}

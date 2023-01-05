@@ -1,0 +1,38 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.tracks {
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden;
+  max-width: calc(100% - var(--gutter-side));
+  margin-left: auto;
+
+  display: grid;
+  grid-template:
+    "title"
+    "." 50px
+    "text"
+    "." 80px
+    "grid"
+    "." 50px
+    "buttons"
+    /1fr;
+
+  @include width-md {
+    max-width: 100%;
+    padding: 0 var(--gutter-side) 0;
+
+    grid-template:
+      "title buttons"
+      ". ." 40px
+      "grid grid"
+      ". ." 40px
+      "text text"
+      /1fr 1fr;
+  }
+
+  @include width-sm {
+    padding-top: 40px;
+  }
+}

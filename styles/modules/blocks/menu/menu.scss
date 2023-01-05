@@ -1,0 +1,24 @@
+@use "../../abstracts/variables.scss" as *;
+@use "../../abstracts/mixins.scss" as *;
+@use "../../abstracts/breakpoints.scss" as *;
+
+.menu {
+  transition: transform 0.6s cubic-bezier(0.51, 0.01, 0.27, 0.99);
+
+  @include width-md {
+    transform: translateX(100%);
+    position: fixed;
+    inset: $menu-height 0 0 0;
+    z-index: 1000;
+    padding: 70px 55px 38px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: var(--color-background-primary);
+  }
+}
+
+.menu[data-visible="true"] {
+  transform: translateX(0%);
+}

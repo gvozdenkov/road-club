@@ -1,0 +1,9 @@
+@use "../../../abstracts/mixins" as *;
+
+.footer__color-theme {
+  grid-area: theme;
+
+  @include width-md {
+    display: none;
+  }
+}

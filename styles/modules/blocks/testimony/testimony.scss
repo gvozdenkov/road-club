@@ -1,0 +1,25 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.testimony {
+  padding: 0 var(--gutter-side) 0;
+  box-sizing: border-box;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 650fr 470fr;
+  grid-template-areas: "image desc";
+  gap: 80px;
+
+  @include width-lg {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "desc";
+    gap: 40px;
+  }
+
+  @include width-sm {
+    padding-top: 20px;
+  }
+}

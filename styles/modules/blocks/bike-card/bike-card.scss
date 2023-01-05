@@ -1,0 +1,14 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.bike-card {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 22px;
+  scroll-snap-align: center;
+
+  @include width-md {
+    gap: 0;
+    justify-items: center;
+  }
+}

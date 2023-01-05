@@ -1,0 +1,16 @@
+@use "../../abstracts/mixins" as *;
+
+.content {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr;
+  gap: 120px;
+
+  @include width-lg {
+    gap: 100px;
+  }
+
+  @include width-md {
+    gap: 80px;
+  }
+}

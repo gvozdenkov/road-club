@@ -1,0 +1,8 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.link-list {
+  @include reset-list;
+  display: flex;
+  gap: 30px;
+}

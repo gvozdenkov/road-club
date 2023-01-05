@@ -1,0 +1,10 @@
+@use "../../../abstracts/mixins.scss" as *;
+
+.menu__color-theme {
+  margin-top: auto;
+  display: none;
+
+  @include width-md {
+    display: flex;
+  }
+}
