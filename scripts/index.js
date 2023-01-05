@@ -114,7 +114,8 @@ function updatePage() {
 
   clearBikesCards();
   renderBikeCards(bikes);
-  setGalleryObserver();
+  setBikeGalleryObserver();
+  setTrackGalleryObserver();
 }
 
 // ====================== event handlers ==============================
@@ -152,7 +153,7 @@ const handleChangeTrackType = (evt) => {
   updatePage();
 };
 
-function setGalleryObserver() {
+function setBikeGalleryObserver() {
   const bikeCards = Array.from(document.querySelectorAll(".bikes-grid__item"));
 
   const observer = new IntersectionObserver(handleBikeCardObserved, {
@@ -183,6 +184,54 @@ function activateIndicator(index) {
     dot.classList.toggle("slider-dots__dot_active", i === index);
   });
 }
+
+function setTrackGalleryObserver() {
+  const trackCards = Array.from(
+    document.querySelectorAll(".tracks-grid__item")
+  );
+
+  const observer = new IntersectionObserver(handleTrackCardObserved, {
+    root: tracksContainer,
+    threshold: 0.6,
+  });
+
+  trackCards.forEach((card) => observer.observe(card));
+}
+
+function handleTrackCardObserved(entries) {
+  const trackCards = Array.from(
+    document.querySelectorAll(".tracks-grid__item")
+  );
+
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      trackCards.forEach((card) =>
+        card.classList.remove("tracks-grid__item_active")
+      );
+
+      const activeTrack = entry.target;
+      activeTrack.classList.add("tracks-grid__item_active");
+      setTrackType(activeTrack.dataset.track);
+
+      const intersectingIndex = trackCards.indexOf(activeTrack);
+      activateTrackIndicator(intersectingIndex);
+    }
+  });
+}
+
+function activateTrackIndicator(index) {
+  const trackLabels = Array.from(
+    document.querySelectorAll(".track-card__label")
+  );
+
+  trackLabels.forEach((label, i) => {
+    label.classList.toggle("track-card__label_visible", i === index);
+  });
+}
+
+const handleTracksScroll = () => {
+  updatePage();
+};
 // ======================== Listeners ================================
 sliderLeftButton.addEventListener("click", handleScrollLeft);
 
@@ -191,6 +240,8 @@ sliderRightButton.addEventListener("click", handleScrollRight);
 trackTypeButtons.forEach((trackButton) => {
   trackButton.addEventListener("click", handleChangeTrackType);
 });
+
+tracksContainer.addEventListener("scroll", handleTracksScroll);
 
 trackTypeOptionsContainer.addEventListener("change", handleChangeTrackType);
 
